@@ -1,14 +1,14 @@
 import java.util.List;
 
 abstract class CandidatesLexicon {
-    private Lexicon lexicon;
+    private LemmasLexicon lemmasLexicon;
 
-    CandidatesLexicon(Lexicon lexicon) {
-        this.lexicon = lexicon;
+    CandidatesLexicon(LemmasLexicon lemmasLexicon) {
+        this.lemmasLexicon = lemmasLexicon;
     }
 
-    Lexicon getLexicon() {
-        return lexicon;
+    LemmasLexicon getLemmasLexicon() {
+        return lemmasLexicon;
     }
 
     abstract List<String> getCandidates(String token);

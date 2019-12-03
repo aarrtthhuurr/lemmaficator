@@ -1,12 +1,14 @@
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-class Lexicon {
-    private Map<String, String> wordsByLemma;
+public class Lexicon {
+    private Map<String, String> map;
 
     Lexicon(String filePath) {
-        wordsByLemma = new HashMap<>();
+        map = new HashMap<>();
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));
@@ -14,7 +16,7 @@ class Lexicon {
             String wordByLemma;
             while ((wordByLemma = bufferedReader.readLine()) != null) {
                 String[] pair = wordByLemma.split("\t");
-                wordsByLemma.put(pair[0].toLowerCase().trim(), pair[1].toLowerCase().trim());
+                map.put(pair[0].toLowerCase().trim(), pair[1].toLowerCase().trim());
             }
 
             bufferedReader.close();
@@ -23,11 +25,10 @@ class Lexicon {
         }
     }
 
-    Map<String, String> getLemmeByWords() {
-        return wordsByLemma;
+    Map<String, String> getMap() {
+        return map;
     }
 
-    String getLemma(String token) {
-        return wordsByLemma.get(token);
-    }
+
+
 }

@@ -9,12 +9,12 @@ import java.util.stream.Collectors;
 class LevenshteinLexicon extends CandidatesLexicon {
     private static final int SEUIL_LEVESHTEIN = 3;
 
-    LevenshteinLexicon(Lexicon lexicon) {
-        super(lexicon);
+    LevenshteinLexicon(LemmasLexicon lemmasLexicon) {
+        super(lemmasLexicon);
     }
 
     List<String> getCandidates(String token) {
-        Map<String, Integer> lemmaByDistance = super.getLexicon().getLemmeByWords().entrySet().stream()
+        Map<String, Integer> lemmaByDistance = super.getLemmasLexicon().getMap().entrySet().stream()
                 .map(entry -> new AbstractMap.SimpleEntry<>(entry.getValue(), getDistance(token, entry.getKey())))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
 

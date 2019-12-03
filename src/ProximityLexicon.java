@@ -9,22 +9,22 @@ class ProximityLexicon extends CandidatesLexicon {
     private static final int MAXIMUM_WORD_SHIFT = 5; // Maximum difference of length between two words
     private static final int MINIMUM_COMMON_LETTERS = 4;
 
-    ProximityLexicon(Lexicon lexicon) {
-        super(lexicon);
+    ProximityLexicon(LemmasLexicon lemmasLexicon) {
+        super(lemmasLexicon);
     }
 
     List<String> getCandidates(String token) {
         List<String> candidates = new ArrayList<>();
 
-        if (super.getLexicon().getLemmeByWords().isEmpty()) return candidates;
+        if (super.getLemmasLexicon().getMap().isEmpty()) return candidates;
 
-        Double bestProximity = super.getLexicon().getLemmeByWords().entrySet().stream()
+        Double bestProximity = super.getLemmasLexicon().getMap().entrySet().stream()
                 .map(entry -> new AbstractMap.SimpleEntry<>(entry.getValue(), getProximity(entry.getKey(), token)))
                 .map(Map.Entry::getValue)
                 .max(Double::compareTo)
                 .get();
 
-        super.getLexicon().getLemmeByWords().forEach((word, lemma) -> {
+        super.getLemmasLexicon().getMap().forEach((word, lemma) -> {
             double proximity = getProximity(word, token);
 
             if (proximity > MINIMUM_PROXIMITY && proximity == bestProximity)
