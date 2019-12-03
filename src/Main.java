@@ -1,9 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Collections;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Main {
@@ -24,36 +22,30 @@ public class Main {
         return null;
     }
 
-    private static void lemmifier(LemmasLexicon lemmasLexicon, List<String> tokens) {
-        if (tokens == null) return;
+    private static List<String> lemmifier(LemmasLexicon lemmasLexicon, List<String> tokens) {
+        return tokens.stream()
+                .map(token -> token.toLowerCase().trim())
+                .filter(token -> token.length() >= MINIMUM_TOKEN_LENGTH)
+                .map(token -> {
+                    String lemma;
+                    if ((lemma = lemmasLexicon.getLemma(token)) != null) {
+                        return lemma;
+                    }
 
-        tokens.forEach(token -> {
-            String lemma;
-            List<String> proximityCandidatesLemmas;
-            List<String> levensheinCandidatesLemmas;
+                    List<String> proximityCandidatesLemmas;
+                    if (!(proximityCandidatesLemmas = new ProximityLexicon(lemmasLexicon).getCandidates(token)).isEmpty()) {
+                        return proximityCandidatesLemmas.get(0); // TODO: We chose to get the first, but another picking method is possible.
+                    }
 
-            token = token.toLowerCase().trim();
+                    List<String> levensheinCandidatesLemmas;
+                    if (!(levensheinCandidatesLemmas = new LevenshteinLexicon(lemmasLexicon).getCandidates(token)).isEmpty()) {
+                        return levensheinCandidatesLemmas.get(0); // TODO: We chose to get the first, but another picking method is possible.
+                    }
 
-            if (token.length() < MINIMUM_TOKEN_LENGTH) {
-                return;
-            }
-
-            if ((lemma = lemmasLexicon.getLemma(token)) != null) {
-                System.out.println("[" + token + "] => [" + lemma + "] (LemmasLexicon)");
-                return;
-            }
-
-            if (!(proximityCandidatesLemmas = new ProximityLexicon(lemmasLexicon).getCandidates(token)).isEmpty()) {
-                System.out.println("[" + token + "] => " + proximityCandidatesLemmas.toString() + " (Proximity)");
-                return;
-            }
-
-            if ((levensheinCandidatesLemmas = new LevenshteinLexicon(lemmasLexicon).getCandidates(token)).isEmpty()) {
-                System.out.println("[" + token + "] => []");
-            } else {
-                System.out.println("[" + token + "] => " + levensheinCandidatesLemmas.toString() + " (Levenshtein)");
-            }
-        });
+                    return null; // TODO: Actually, we returns null. It could also be the token itself.
+                })
+                .filter(Objects::nonNull)
+                .collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
@@ -66,13 +58,11 @@ public class Main {
             List<String> tokensList = Collections.list(tokens).stream().map(token -> ((String) token)).collect(Collectors.toList());
             System.out.println("Tokenized request: " + tokensList);
 
-            List<String> replacedTokenList = replacementLexicon.replaceAll(tokensList);
-            System.out.println("Tokenized and replaced request: " + replacedTokenList);
+            List<String> lemmifiedList = lemmifier(lemmasLexicon, tokensList);
+            System.out.println("Lemmified request: " + lemmifiedList);
 
-            lemmifier(
-                    lemmasLexicon,
-                    replacedTokenList
-            );
+            List<String> replacedTokenList = replacementLexicon.replaceAll(lemmifiedList);
+            System.out.println("Simplified request: " + replacedTokenList);
         }
     }
 }
