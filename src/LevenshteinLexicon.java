@@ -13,7 +13,11 @@ class LevenshteinLexicon extends CandidatesLexicon {
     List<String> getCandidates(String token) {
         Map<String, Integer> lemmaByDistance = super.getLemmasLexicon().getMap().entrySet().stream()
                 .map(entry -> new AbstractMap.SimpleEntry<>(entry.getValue(), getDistance(token, entry.getKey())))
-                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+                .collect(Collectors.toMap(
+                        Map.Entry::getKey,
+                        Map.Entry::getValue,
+                        (lemma1, lemma2) -> min(lemma1, lemma2)) // If we found duplicates lemmas, we select the shortest
+                );
 
         int bestDistance = lemmaByDistance.values().stream().min(Integer::compareTo).orElse(0);
 

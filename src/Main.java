@@ -23,6 +23,8 @@ public class Main {
     }
 
     private static String choseToken(List<String> tokens) {
+        if (tokens.size() == 1) return tokens.get(0);
+
         System.out.println(">> Chose between:");
         for (int i = 0; i < tokens.size(); i++) {
             System.out.println(">> ["+ i +"] " + tokens.get(i));
@@ -72,6 +74,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
+        FilterList filterList = new FilterList(args[2]);
         LemmasLexicon lemmasLexicon = new LemmasLexicon(args[0]);
         SubstitutionLexicon substitutionLexicon = new SubstitutionLexicon(args[1]);
 
@@ -79,13 +82,16 @@ public class Main {
 
         while ((tokens = read()) != null ) {
             List<String> tokensList = Collections.list(tokens).stream().map(token -> ((String) token)).collect(Collectors.toList());
-            System.out.println("> Tokenized request: " + tokensList);
+            System.out.println("> Initial request: " + tokensList);
+
+            List<String> filteredList = filterList.removeFrom(tokensList);
+            System.out.println("> After filter: " + filteredList);
 
             List<String> lemmifiedList = lemmifier(lemmasLexicon, tokensList);
-            System.out.println("> Lemmified request: " + lemmifiedList);
+            System.out.println("> After lemmafication: " + lemmifiedList);
 
             List<String> replacedTokenList = substitutionLexicon.replaceAll(lemmifiedList);
-            System.out.println("> Simplified request: " + replacedTokenList);
+            System.out.println("> After substitutions: " + replacedTokenList);
         }
     }
 }
