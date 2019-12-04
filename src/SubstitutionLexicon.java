@@ -1,9 +1,9 @@
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class ReplacementLexicon extends Lexicon {
+public class SubstitutionLexicon extends Lexicon {
 
-    public ReplacementLexicon(String filePath) {
+    public SubstitutionLexicon(String filePath) {
         super(filePath);
     }
 

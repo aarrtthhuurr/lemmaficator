@@ -12,9 +12,32 @@ public class Main {
         String prompt;
         try {
             bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.print(">");
+            System.out.print("> ");
             prompt = bufferedReader.readLine();
             return new StringTokenizer(prompt);
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    private static String choseToken(List<String> tokens) {
+        System.out.println(">> Chose between:");
+        for (int i = 0; i < tokens.size(); i++) {
+            System.out.println(">> ["+ i +"] " + tokens.get(i));
+        }
+
+        BufferedReader bufferedReader;
+        String prompt;
+        try {
+            bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.print(">> ");
+            prompt = bufferedReader.readLine();
+            return tokens.get(Integer.parseInt(prompt));
+        }
+        catch (NumberFormatException | IndexOutOfBoundsException e) {
+            return choseToken(tokens);
         }
         catch (IOException e) {
             e.printStackTrace();
@@ -34,12 +57,12 @@ public class Main {
 
                     List<String> proximityCandidatesLemmas;
                     if (!(proximityCandidatesLemmas = new ProximityLexicon(lemmasLexicon).getCandidates(token)).isEmpty()) {
-                        return proximityCandidatesLemmas.get(0); // TODO: We chose to get the first, but another picking method is possible.
+                        return choseToken(proximityCandidatesLemmas);
                     }
 
                     List<String> levensheinCandidatesLemmas;
                     if (!(levensheinCandidatesLemmas = new LevenshteinLexicon(lemmasLexicon).getCandidates(token)).isEmpty()) {
-                        return levensheinCandidatesLemmas.get(0); // TODO: We chose to get the first, but another picking method is possible.
+                        return choseToken(levensheinCandidatesLemmas);
                     }
 
                     return null; // TODO: Actually, we returns null. It could also be the token itself.
@@ -50,19 +73,19 @@ public class Main {
 
     public static void main(String[] args) {
         LemmasLexicon lemmasLexicon = new LemmasLexicon(args[0]);
-        ReplacementLexicon replacementLexicon = new ReplacementLexicon(args[1]);
+        SubstitutionLexicon substitutionLexicon = new SubstitutionLexicon(args[1]);
 
         StringTokenizer tokens;
 
         while ((tokens = read()) != null ) {
             List<String> tokensList = Collections.list(tokens).stream().map(token -> ((String) token)).collect(Collectors.toList());
-            System.out.println("Tokenized request: " + tokensList);
+            System.out.println("> Tokenized request: " + tokensList);
 
             List<String> lemmifiedList = lemmifier(lemmasLexicon, tokensList);
-            System.out.println("Lemmified request: " + lemmifiedList);
+            System.out.println("> Lemmified request: " + lemmifiedList);
 
-            List<String> replacedTokenList = replacementLexicon.replaceAll(lemmifiedList);
-            System.out.println("Simplified request: " + replacedTokenList);
+            List<String> replacedTokenList = substitutionLexicon.replaceAll(lemmifiedList);
+            System.out.println("> Simplified request: " + replacedTokenList);
         }
     }
 }

@@ -1,7 +1,4 @@
-import java.util.AbstractMap;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 class ProximityLexicon extends CandidatesLexicon {
     private static final int MINIMUM_WORD_LENGTH = 4;
