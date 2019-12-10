@@ -75,8 +75,8 @@ public class Main {
 
     public static void main(String[] args) {
         FilterList filterList = new FilterList(args[2]);
-        LemmasLexicon lemmasLexicon = new LemmasLexicon(args[0]);
         SubstitutionLexicon substitutionLexicon = new SubstitutionLexicon(args[1]);
+        LemmasLexicon lemmasLexicon = new LemmasLexicon(args[0], substitutionLexicon.getMap().keySet());
 
         StringTokenizer tokens;
 

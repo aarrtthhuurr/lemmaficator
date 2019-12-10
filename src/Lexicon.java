@@ -2,14 +2,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 public class Lexicon {
     private Map<String, String> map;
 
-    Lexicon(String filePath) {
+    public Lexicon(String filePath) {
         map = new HashMap<>();
 
         try {
@@ -27,16 +25,11 @@ public class Lexicon {
         }
     }
 
-    Map<String, String> getMap() {
+    public Map<String, String> getMap() {
         return map;
     }
 
-    public String replace(String token) {
-        String replacement = getMap().get(token);
-        return replacement != null ? replacement : token;
-    }
-
-    public List<String> replaceAll(List<String> tokens) {
-        return tokens.stream().map(this::replace).collect(Collectors.toList());
+    public void add(String s1, String s2) {
+        this.map.put(s1, s2);
     }
 }
