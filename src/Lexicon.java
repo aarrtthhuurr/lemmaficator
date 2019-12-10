@@ -1,14 +1,14 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Lexicon {
     private Map<String, String> map;
 
     public Lexicon(String filePath) {
-        map = new HashMap<>();
+        map = new LinkedHashMap<>();
 
         try {
             BufferedReader bufferedReader = new BufferedReader(new FileReader(filePath));

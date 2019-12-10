@@ -76,18 +76,25 @@ public class Main {
     public static void main(String[] args) {
         FilterList filterList = new FilterList(args[2]);
         SubstitutionLexicon substitutionLexicon = new SubstitutionLexicon(args[1]);
-        LemmasLexicon lemmasLexicon = new LemmasLexicon(args[0], substitutionLexicon.getMap().keySet());
+        LemmasLexicon lemmasLexicon = new LemmasLexicon(args[0], substitutionLexicon.getMap());
 
         StringTokenizer tokens;
 
-        while ((tokens = read()) != null ) {
-            List<String> tokensList = Collections.list(tokens).stream().map(token -> ((String) token)).collect(Collectors.toList());
+        while ((tokens = read()) != null) {
+            if (!tokens.hasMoreTokens()) continue;
+
+            List<String> tokensList = Collections.list(tokens).stream()
+                    .map(token -> ((String) token).trim()
+                            .toLowerCase()
+                            .replaceAll(".*'(.*)", "$1")) // Keep only after "'"
+                    .filter(token -> !token.matches("[^a-zA-Z\\d-_]"))
+                    .collect(Collectors.toList());
             System.out.println("> Initial request: " + tokensList);
 
             List<String> filteredList = filterList.removeFrom(tokensList);
             System.out.println("> After filter: " + filteredList);
 
-            List<String> lemmifiedList = lemmifier(lemmasLexicon, tokensList);
+            List<String> lemmifiedList = lemmifier(lemmasLexicon, filteredList);
             System.out.println("> After lemmafication: " + lemmifiedList);
 
             List<String> replacedTokenList = substitutionLexicon.replaceAll(lemmifiedList);
