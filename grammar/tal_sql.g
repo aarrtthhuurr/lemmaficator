@@ -5,13 +5,7 @@ SELECT : 'vouloir'
 
 SELECT_COUNT :'combien' ;
 
-ARTICLE : 'fichier'
-;
-
-BULLETIN : 'bulletin'
-;
-
-AUTEUR : 'auteur'
+ARTICLE : 'fichier' | 'article' | 'bulletin'
 ;
 
 NUMERO:'numero';
@@ -71,11 +65,10 @@ requete returns [Arbre req_arbre = new Arbre("")]
 					}
 				| SELECT_COUNT
 					{
-						req_arbre.ajouteFils(new Arbre("", "select count(*)"));
+						req_arbre.ajouteFils(new Arbre("", "select count{*}"));
 					}
-			)
+			)?
 		)
-		ARTICLE?
 		((
 			r = rubrique
 			{
@@ -208,7 +201,7 @@ email returns [Arbre email_arbre = new Arbre("")]
 	})?
 	b = EMAIL
 	{
-		email_arbre.ajouteFils(new Arbre(""," from public.email where (email LIKE \%"+b.getText()+"\% OR email = '"+b.getText() +"')"));
+		email_arbre.ajouteFils(new Arbre(""," from public.email where (email LIKE '\%"+b.getText()+"\%' OR email = '"+b.getText() +"')"));
 	}
 	(p = params
 	{
@@ -234,11 +227,11 @@ rubrique returns [Arbre rubrique_arbre = new Arbre("")]
 	}
 	(a = VAR
 	{
-		rubrique_arbre.ajouteFils(new Arbre(""," (rubrique LIKE \%"+a.getText()+"\% OR rubrique = '"+a.getText()+"')"));
+		rubrique_arbre.ajouteFils(new Arbre(""," (rubrique LIKE '\%"+a.getText()+"\%' OR rubrique = '"+a.getText()+"')"));
 	})
 	(CONJ_ET? b = VAR
 	{
-		rubrique_arbre.ajouteFils(new Arbre(""," AND (rubrique LIKE \%"+b.getText()+"\% OR rubrique = '"+b.getText()+"')"));
+		rubrique_arbre.ajouteFils(new Arbre(""," AND (rubrique LIKE '\%"+b.getText()+"\%' OR rubrique = '"+b.getText()+"')"));
 	})*
 
 ;
@@ -256,12 +249,12 @@ nombre returns [Arbre nombre_arbre = new Arbre("")]
 	(NUMERO
 	b = NOMBRE
 	{
-		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE \%"+b.getText()+"\% OR numero = "+b.getText() +") OR (fichier LIKE \%"+b.getText()+"\% )"));
+		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE '\%"+b.getText()+"\%' OR numero = "+b.getText() +") OR (fichier LIKE '\%"+b.getText()+"\%' )"));
 	}
 	|
 	b = NOMBRE
 	{
-		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE \%"+b.getText()+"\% OR numero = "+b.getText() +") OR (fichier LIKE \%"+b.getText()+"\% )"
+		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE '\%"+b.getText()+"\%' OR numero = "+b.getText() +") OR (fichier LIKE '\%"+b.getText()+"\%' )"
 		+" (jour = "+b.getText()+" OR mois = "+b.getText() +" OR annee = "+b.getText()+")"));
 	})
 	(p = params
@@ -504,9 +497,9 @@ params returns [Arbre arbre = new Arbre("")]
 	MOT?
 	a = VAR
 	{
-		arbre.ajouteFils(new Arbre(""," from public.titretexte where mot LIKE \%"+a.getText()+"\% OR titre LIKE \%"+a.getText()+"\%"));
+		arbre.ajouteFils(new Arbre(""," from public.titretexte where mot LIKE '\%"+a.getText()+"\%'"));
 	}
-	(p = param
+	(ARTICLE? MOT? p = param
 	{
 		pm_arbre = $p.p_arbre;
 		arbre.ajouteFils(pm_arbre);
@@ -517,11 +510,11 @@ params returns [Arbre arbre = new Arbre("")]
 param returns [Arbre p_arbre = new Arbre("")]:
 	(CONJ_OU c= VAR
 	{
-		p_arbre.ajouteFils(new Arbre(""," OR mot LIKE \%"+c.getText()+"\% OR titre LIKE \%"+c.getText()+"\%"));
+		p_arbre.ajouteFils(new Arbre(""," OR mot LIKE '\%"+c.getText()+"\%'"));
 	}) |
 	(CONJ_ET? b = VAR
 	{
-		p_arbre.ajouteFils(new Arbre(""," AND (mot LIKE \%"+b.getText()+"\% OR titre LIKE \%"+b.getText()+"\%)"));
+		p_arbre.ajouteFils(new Arbre(""," AND (mot LIKE '\%"+b.getText()+"\%')"));
 	})
 ;
 
