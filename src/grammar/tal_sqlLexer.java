@@ -1,5 +1,7 @@
 // $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g 2019-12-16 21:24:38
 
+package grammar;
+
 import org.antlr.runtime.*;
 import java.util.Stack;
 import java.util.List;
