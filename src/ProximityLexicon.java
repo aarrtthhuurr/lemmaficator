@@ -1,10 +1,11 @@
 import java.util.*;
+import java.util.stream.Collectors;
 
 class ProximityLexicon extends CandidatesLexicon {
     private static final int MINIMUM_WORD_LENGTH = 4;
-    private static final int MINIMUM_PROXIMITY = 23;
+    private static final int MINIMUM_PROXIMITY = 50;
     private static final int MAXIMUM_WORD_SHIFT = 5; // Maximum difference of length between two words
-    private static final int MINIMUM_COMMON_LETTERS = 4;
+    private static final int MINIMUM_COMMON_LETTERS = 5;
 
     ProximityLexicon(LemmasLexicon lemmasLexicon) {
         super(lemmasLexicon);
@@ -28,7 +29,7 @@ class ProximityLexicon extends CandidatesLexicon {
                 candidates.add(lemma);
         });
 
-        return candidates;
+        return candidates.stream().distinct().collect(Collectors.toList());
     }
 
     private static int commonLettersCount(String a, String b) {

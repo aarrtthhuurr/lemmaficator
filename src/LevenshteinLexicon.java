@@ -4,7 +4,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 
 class LevenshteinLexicon extends CandidatesLexicon {
-    private static final int SEUIL_LEVESHTEIN = 3;
+    private static final int SEUIL_LEVESHTEIN = 5;
 
     LevenshteinLexicon(LemmasLexicon lemmasLexicon) {
         super(lemmasLexicon);
@@ -24,6 +24,7 @@ class LevenshteinLexicon extends CandidatesLexicon {
         return lemmaByDistance.entrySet().stream()
                 .filter(entry -> entry.getValue() <= SEUIL_LEVESHTEIN && bestDistance == entry.getValue())
                 .map(Map.Entry::getKey)
+                .distinct()
                 .collect(Collectors.toList());
     }
 
