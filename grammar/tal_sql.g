@@ -9,9 +9,9 @@ FICHIER : 'fichier' | 'article';
 
 FICHIER_TABLE : 'fichiers' | 'articles';
 
-BULLETIN : 'bulletin | numero';
+BULLETIN : 'bulletin' | 'numero';
 
-BULLETIN_TABLE : 'bulletins | numeros';
+BULLETIN_TABLE : 'bulletins' | 'numeros';
 
 EMAIL_TABLE : 'emails';
 
@@ -166,6 +166,13 @@ requete returns [Arbre req_arbre = new Arbre("")]
 					e_arbre = $e.email_arbre;
 					req_arbre.ajouteFils(e_arbre);
 					req_arbre.ajouteFils(new Arbre("", " where public.numero.numero = public.email.numero"));
+				}
+			)
+			|
+				(n = nombre
+				{
+					n_arbre = $n.nombre_arbre;
+					req_arbre.ajouteFils(n_arbre);
 				}
 			))*
 		) |
