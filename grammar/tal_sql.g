@@ -5,12 +5,17 @@ SELECT : 'vouloir'
 
 SELECT_COUNT :'combien' ;
 
-ARTICLE : 'fichier' | 'article' | 'bulletin'
-;
+FICHIER : 'fichier' | 'article';
 
-NUMERO:'numero';
+FICHIER_TABLE : 'fichiers' | 'articles';
 
-EMAIL_TABLE : 'email';
+BULLETIN : 'bulletin | numero';
+
+BULLETIN_TABLE : 'bulletins | numeros';
+
+EMAIL_TABLE : 'emails';
+
+EMAIL_MOT : 'email';
 
 NOMBRE: ('0'..'9')('0'..'9')*;	
 
@@ -25,6 +30,8 @@ JOUR :'jour';
 TITRE :'titre';
 
 RUBRIQUE : 'rubrique';
+
+RUBRIQUE_TABLE : 'rubriques';
 
 CONJ_ET : 'et';
 
@@ -67,7 +74,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 					{
 						req_arbre.ajouteFils(new Arbre("", "select count{*}"));
 					}
-			)?
+			)
 		)
 		((
 			r = rubrique
@@ -80,6 +87,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					d_arbre = $d.date_arbre;
 					req_arbre.ajouteFils(d_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.rubrique.numero = public.date.numero"));
 				}
 			) |
 			(
@@ -87,6 +95,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					n_arbre = $n.nombre_arbre;
 					req_arbre.ajouteFils(n_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.rubrique.numero = public.numero.numero"));
 				}
 			) |
 			(
@@ -94,6 +103,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					e_arbre = $e.email_arbre;
 					req_arbre.ajouteFils(e_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.rubrique.numero = public.email.numero"));
 				}
 			))*
 		) |
@@ -108,6 +118,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					r_arbre = $r.rubrique_arbre;
 					req_arbre.ajouteFils(r_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.date.numero = public.rubrique.numero"));
 				}
 			) |
 			(
@@ -115,6 +126,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					n_arbre = $n.nombre_arbre;
 					req_arbre.ajouteFils(n_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.date.numero = public.numero.numero"));
 				}
 			) |
 			(
@@ -122,6 +134,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					e_arbre = $e.email_arbre;
 					req_arbre.ajouteFils(e_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.date.numero = public.email.numero"));
 				}
 			))*
 		) |
@@ -136,6 +149,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					r_arbre = $r.rubrique_arbre;
 					req_arbre.ajouteFils(r_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.numero.numero = public.rubrique.numero"));
 				}
 			) |
 			(
@@ -143,6 +157,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					d_arbre = $d.date_arbre;
 					req_arbre.ajouteFils(d_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.numero.numero = public.date.numero"));
 				}
 			) |
 			(
@@ -150,6 +165,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					e_arbre = $e.email_arbre;
 					req_arbre.ajouteFils(e_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.numero.numero = public.email.numero"));
 				}
 			))*
 		) |
@@ -164,6 +180,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					r_arbre = $r.rubrique_arbre;
 					req_arbre.ajouteFils(r_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.email.numero = public.rubrique.numero"));
 				}
 			) |
 			(
@@ -171,6 +188,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					d_arbre = $d.date_arbre;
 					req_arbre.ajouteFils(d_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.email.numero = public.date.numero"));
 				}
 			) |
 			(
@@ -178,6 +196,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 				{
 					n_arbre = $n.nombre_arbre;
 					req_arbre.ajouteFils(n_arbre);
+					req_arbre.ajouteFils(new Arbre("", " where public.email.numero = public.numero.numero"));
 				}
 			))*
 		)|
@@ -186,6 +205,7 @@ requete returns [Arbre req_arbre = new Arbre("")]
 			{
 				ps_arbre = $p.arbre;
 				req_arbre.ajouteFils(ps_arbre);
+				req_arbre.ajouteFils(new Arbre("", " from public.numero where public.numero.numero = public.titretexte.numero "));
 			}
 		))
 ;
@@ -199,10 +219,16 @@ email returns [Arbre email_arbre = new Arbre("")]
 		email_arbre.ajouteFils(ps_arbre);
 		email_arbre.ajouteFils(new Arbre(""," AND (public.titretexte.numero = public.email.numero)"));
 	})?
-	b = EMAIL
+	(
+	EMAIL_MOT b = EMAIL
 	{
 		email_arbre.ajouteFils(new Arbre(""," from public.email where (email LIKE '\%"+b.getText()+"\%' OR email = '"+b.getText() +"')"));
 	}
+	|
+	EMAIL_TABLE
+	{
+		email_arbre.ajouteFils(new Arbre(""," from public.email "));
+	})
 	(p = params
 	{
 		ps_arbre = $p.arbre;
@@ -221,18 +247,31 @@ rubrique returns [Arbre rubrique_arbre = new Arbre("")]
 		rubrique_arbre.ajouteFils(ps_arbre);
 		rubrique_arbre.ajouteFils(new Arbre(""," AND (public.titretexte.numero = public.rubrique.numero)"));
 	})?
-	b = RUBRIQUE
+	(
+		b = RUBRIQUE_TABLE
+		{
+			rubrique_arbre.ajouteFils(new Arbre(""," from public.rubrique"));
+		}
+	|
+		b = RUBRIQUE
+		{
+			rubrique_arbre.ajouteFils(new Arbre(""," from public.rubrique where"));
+		}
+		a = VAR
+		{
+			rubrique_arbre.ajouteFils(new Arbre(""," (rubrique LIKE '\%"+a.getText()+"\%' OR rubrique = '"+a.getText()+"')"));
+		}
+		(CONJ_ET? b = VAR
+		{
+			rubrique_arbre.ajouteFils(new Arbre(""," OR (rubrique LIKE '\%"+b.getText()+"\%' OR rubrique = '"+b.getText()+"')"));
+		})*
+	)
+	(p = params
 	{
-		rubrique_arbre.ajouteFils(new Arbre(""," from public.rubrique where"));
-	}
-	(a = VAR
-	{
-		rubrique_arbre.ajouteFils(new Arbre(""," (rubrique LIKE '\%"+a.getText()+"\%' OR rubrique = '"+a.getText()+"')"));
-	})
-	(CONJ_ET? b = VAR
-	{
-		rubrique_arbre.ajouteFils(new Arbre(""," AND (rubrique LIKE '\%"+b.getText()+"\%' OR rubrique = '"+b.getText()+"')"));
-	})*
+		ps_arbre = $p.arbre;
+		rubrique_arbre.ajouteFils(ps_arbre);
+		rubrique_arbre.ajouteFils(new Arbre(""," AND (public.titretexte.numero = public.rubrique.numero)"));
+	})?
 
 ;
 
@@ -246,16 +285,30 @@ nombre returns [Arbre nombre_arbre = new Arbre("")]
 		nombre_arbre.ajouteFils(ps_arbre);
 		nombre_arbre.ajouteFils(new Arbre(""," AND (public.titretexte.numero = public.numero.numero)"));
 	})?
-	(NUMERO
+	(
+	(FICHIER_TABLE | BULLETIN_TABLE)
+	{
+		nombre_arbre.ajouteFils(new Arbre(""," from public.numero "));
+	}
+	|
+	FICHIER?
+	BULLETIN
+	FICHIER?
 	b = NOMBRE
 	{
-		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE '\%"+b.getText()+"\%' OR numero = "+b.getText() +") OR (fichier LIKE '\%"+b.getText()+"\%' )"));
+		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE '\%"+b.getText()+"\%' OR numero = '"+b.getText() +"')"));
+	}
+	|
+	FICHIER
+	b = NOMBRE
+	{
+		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (fichier LIKE '\%"+b.getText()+"\%' )"));
 	}
 	|
 	b = NOMBRE
 	{
-		nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE '\%"+b.getText()+"\%' OR numero = "+b.getText() +") OR (fichier LIKE '\%"+b.getText()+"\%' )"
-		+" (jour = "+b.getText()+" OR mois = "+b.getText() +" OR annee = "+b.getText()+")"));
+		nombre_arbre.ajouteFils(new Arbre(""," from public.numero from public.date where public.date.numero = public.numero.numero where (numero.numero LIKE '\%"+b.getText()+"\%' OR numero.numero = '"+b.getText() +"') OR (numero.fichier LIKE '\%"+b.getText()+"\%' )"
+		+" OR (date.jour = '"+b.getText()+"' OR date.mois = '"+b.getText() +"' OR date.annee = '"+b.getText()+"')"));
 	})
 	(p = params
 	{
@@ -273,15 +326,20 @@ date returns [Arbre date_arbre = new Arbre("")]
 		date_arbre.ajouteFils(ps_arbre);
 		date_arbre.ajouteFils(new Arbre(""," AND (public.titretexte.numero = public.date.numero)"));
 	})?
-	(
+	(	(b = DATE
+		{
+			date_arbre.ajouteFils(new Arbre(""," from public.date "));
+		}
+		c = NOMBRE
+		{
+			date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"' OR mois = '"+c.getText() +"' OR annee = '"+c.getText()+"')"));
+		})
+		|
 		(b = DATE
 		{
 			date_arbre.ajouteFils(new Arbre(""," from public.date "));
-		} 
-		c = NOMBRE
-		{
-			date_arbre.ajouteFils(new Arbre("","where (jour = "+c.getText()+" OR mois = "+c.getText() +" OR annee = "+c.getText()+")"));
-		})|
+		})
+		|
 		(
 			(b = JOUR
 			{
@@ -289,17 +347,17 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 			})
 			(b = ANNEE
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 			})
 			(b = MOIS
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 			})
 			| 
 			(b = ANNEE
@@ -308,17 +366,17 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 			})
 			(b = JOUR
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 			})
 			(b = MOIS
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 			})
 			| 
 			(b = ANNEE
@@ -327,17 +385,17 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 			})
 			(b = MOIS
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 			})
 			(b = JOUR
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 			})
 			| 
 			(b = MOIS
@@ -346,17 +404,17 @@ date returns [Arbre date_arbre = new Arbre("")]
 			} 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 			})
 			(b = JOUR
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 			})
 			(b = ANNEE
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 			})
 			| 
 			(b = JOUR
@@ -365,17 +423,17 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 			})
 			(b = MOIS
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 			})
 			(b = ANNEE
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 			})
 			|
 			(b = MOIS
@@ -384,17 +442,17 @@ date returns [Arbre date_arbre = new Arbre("")]
 			} 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 			})
 			(b = ANNEE
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 			})
 			(b = JOUR
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","AND (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","AND (jour = '"+c.getText()+"')"));
 			})
 			|
 			(b = ANNEE
@@ -403,12 +461,12 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 			})
 			(b = JOUR 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 			})
 			| 
 			(b = JOUR
@@ -417,12 +475,12 @@ date returns [Arbre date_arbre = new Arbre("")]
 			} 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 			})
 			(b = ANNEE
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","AND (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","AND (annee = '"+c.getText()+"')"));
 			})
 			| 
 			(b = MOIS
@@ -431,12 +489,12 @@ date returns [Arbre date_arbre = new Arbre("")]
 			} 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 			})
 			(b = ANNEE
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 			})
 			|
 			(b = ANNEE
@@ -445,12 +503,12 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 			})
 			(b = MOIS
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre(""," AND (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 			})
 			|
 			(b = MOIS
@@ -459,7 +517,7 @@ date returns [Arbre date_arbre = new Arbre("")]
 			} 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (mois = "+c.getText() +")"));
+				date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 			})
 			|
 			(b = ANNEE
@@ -468,7 +526,7 @@ date returns [Arbre date_arbre = new Arbre("")]
 			}
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (annee = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 			})
 			|
 			(b = JOUR
@@ -477,7 +535,7 @@ date returns [Arbre date_arbre = new Arbre("")]
 			} 
 			c = NOMBRE
 			{
-				date_arbre.ajouteFils(new Arbre("","where (jour = "+c.getText()+")"));
+				date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 			})
 		)
 		
@@ -493,13 +551,12 @@ date returns [Arbre date_arbre = new Arbre("")]
 
 params returns [Arbre arbre = new Arbre("")]
 	@init {Arbre pm_arbre;}:
-	ARTICLE?
 	MOT?
 	a = VAR
 	{
 		arbre.ajouteFils(new Arbre(""," from public.titretexte where mot LIKE '\%"+a.getText()+"\%'"));
 	}
-	(ARTICLE? MOT? p = param
+	(MOT? p = param
 	{
 		pm_arbre = $p.p_arbre;
 		arbre.ajouteFils(pm_arbre);
@@ -508,11 +565,11 @@ params returns [Arbre arbre = new Arbre("")]
 ;
 
 param returns [Arbre p_arbre = new Arbre("")]:
-	(CONJ_OU c= VAR
+	(CONJ_OU? c= VAR
 	{
 		p_arbre.ajouteFils(new Arbre(""," OR mot LIKE '\%"+c.getText()+"\%'"));
 	}) |
-	(CONJ_ET? b = VAR
+	(CONJ_ET b = VAR
 	{
 		p_arbre.ajouteFils(new Arbre(""," AND (mot LIKE '\%"+b.getText()+"\%')"));
 	})
