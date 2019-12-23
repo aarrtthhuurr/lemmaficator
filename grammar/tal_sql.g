@@ -17,7 +17,7 @@ EMAIL_TABLE : 'emails';
 
 EMAIL_MOT : 'email';
 
-NOMBRE: ('0'..'9')('0'..'9')*;	
+NOMBRE: ('0'..'9')('0'..'9')*;
 
 DATE: 'date';
 
@@ -212,7 +212,6 @@ requete returns [Arbre req_arbre = new Arbre("")]
 			{
 				ps_arbre = $p.arbre;
 				req_arbre.ajouteFils(ps_arbre);
-				req_arbre.ajouteFils(new Arbre("", " from public.numero where public.numero.numero = public.titretexte.numero "));
 			}
 		))
 ;

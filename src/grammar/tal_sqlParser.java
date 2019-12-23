@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g 2019-12-18 10:56:55
+// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g 2019-12-23 15:46:10
 
 package grammar;
 
@@ -71,7 +71,7 @@ public class tal_sqlParser extends Parser {
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:57:25: (r= requete )
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:58:3: r= requete
 			{
-			pushFollow(FOLLOW_requete_in_listerequetes335);
+			pushFollow(FOLLOW_requete_in_listerequetes334);
 			r=requete();
 			state._fsp--;
 
@@ -135,7 +135,7 @@ public class tal_sqlParser extends Parser {
 				case 1 :
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:69:5: SELECT
 					{
-					match(input,SELECT,FOLLOW_SELECT_in_requete374); 
+					match(input,SELECT,FOLLOW_SELECT_in_requete373); 
 
 											req_arbre.ajouteFils(new Arbre("","select distinct *"));
 										
@@ -144,7 +144,7 @@ public class tal_sqlParser extends Parser {
 				case 2 :
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:73:7: SELECT_COUNT
 					{
-					match(input,SELECT_COUNT,FOLLOW_SELECT_COUNT_in_requete390); 
+					match(input,SELECT_COUNT,FOLLOW_SELECT_COUNT_in_requete389); 
 
 											req_arbre.ajouteFils(new Arbre("", "select count{*}"));
 										
@@ -165,7 +165,7 @@ public class tal_sqlParser extends Parser {
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:79:4: (r= rubrique ( (d= date ) | (n= nombre ) | (e= email ) )* )
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:80:4: r= rubrique ( (d= date ) | (n= nombre ) | (e= email ) )*
 					{
-					pushFollow(FOLLOW_rubrique_in_requete420);
+					pushFollow(FOLLOW_rubrique_in_requete419);
 					r=rubrique();
 					state._fsp--;
 
@@ -185,7 +185,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:85:5: (d= date )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:86:5: d= date
 							{
-							pushFollow(FOLLOW_date_in_requete441);
+							pushFollow(FOLLOW_date_in_requete440);
 							d=date();
 							state._fsp--;
 
@@ -204,7 +204,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:93:4: (n= nombre )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:94:5: n= nombre
 							{
-							pushFollow(FOLLOW_nombre_in_requete469);
+							pushFollow(FOLLOW_nombre_in_requete468);
 							n=nombre();
 							state._fsp--;
 
@@ -223,7 +223,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:101:4: (e= email )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:102:5: e= email
 							{
-							pushFollow(FOLLOW_email_in_requete497);
+							pushFollow(FOLLOW_email_in_requete496);
 							e=email();
 							state._fsp--;
 
@@ -252,7 +252,7 @@ public class tal_sqlParser extends Parser {
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:110:3: (d= date ( (r= rubrique ) | (n= nombre ) | (e= email ) )* )
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:111:4: d= date ( (r= rubrique ) | (n= nombre ) | (e= email ) )*
 					{
-					pushFollow(FOLLOW_date_in_requete529);
+					pushFollow(FOLLOW_date_in_requete528);
 					d=date();
 					state._fsp--;
 
@@ -272,7 +272,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:116:5: (r= rubrique )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:117:5: r= rubrique
 							{
-							pushFollow(FOLLOW_rubrique_in_requete550);
+							pushFollow(FOLLOW_rubrique_in_requete549);
 							r=rubrique();
 							state._fsp--;
 
@@ -291,7 +291,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:124:4: (n= nombre )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:125:5: n= nombre
 							{
-							pushFollow(FOLLOW_nombre_in_requete578);
+							pushFollow(FOLLOW_nombre_in_requete577);
 							n=nombre();
 							state._fsp--;
 
@@ -310,7 +310,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:132:4: (e= email )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:133:5: e= email
 							{
-							pushFollow(FOLLOW_email_in_requete606);
+							pushFollow(FOLLOW_email_in_requete605);
 							e=email();
 							state._fsp--;
 
@@ -339,7 +339,7 @@ public class tal_sqlParser extends Parser {
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:141:3: (n= nombre ( (r= rubrique ) | (d= date ) | (e= email ) | (n= nombre ) )* )
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:142:4: n= nombre ( (r= rubrique ) | (d= date ) | (e= email ) | (n= nombre ) )*
 					{
-					pushFollow(FOLLOW_nombre_in_requete638);
+					pushFollow(FOLLOW_nombre_in_requete637);
 					n=nombre();
 					state._fsp--;
 
@@ -359,7 +359,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:147:5: (r= rubrique )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:148:5: r= rubrique
 							{
-							pushFollow(FOLLOW_rubrique_in_requete659);
+							pushFollow(FOLLOW_rubrique_in_requete658);
 							r=rubrique();
 							state._fsp--;
 
@@ -378,7 +378,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:155:4: (d= date )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:156:5: d= date
 							{
-							pushFollow(FOLLOW_date_in_requete687);
+							pushFollow(FOLLOW_date_in_requete686);
 							d=date();
 							state._fsp--;
 
@@ -397,7 +397,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:163:4: (e= email )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:164:5: e= email
 							{
-							pushFollow(FOLLOW_email_in_requete715);
+							pushFollow(FOLLOW_email_in_requete714);
 							e=email();
 							state._fsp--;
 
@@ -416,7 +416,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:172:5: (n= nombre )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:172:6: n= nombre
 							{
-							pushFollow(FOLLOW_nombre_in_requete742);
+							pushFollow(FOLLOW_nombre_in_requete741);
 							n=nombre();
 							state._fsp--;
 
@@ -444,7 +444,7 @@ public class tal_sqlParser extends Parser {
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:179:3: (e= email ( (r= rubrique ) | (d= date ) | (n= nombre ) )* )
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:180:4: e= email ( (r= rubrique ) | (d= date ) | (n= nombre ) )*
 					{
-					pushFollow(FOLLOW_email_in_requete774);
+					pushFollow(FOLLOW_email_in_requete773);
 					e=email();
 					state._fsp--;
 
@@ -464,7 +464,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:185:5: (r= rubrique )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:186:5: r= rubrique
 							{
-							pushFollow(FOLLOW_rubrique_in_requete795);
+							pushFollow(FOLLOW_rubrique_in_requete794);
 							r=rubrique();
 							state._fsp--;
 
@@ -483,7 +483,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:193:4: (d= date )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:194:5: d= date
 							{
-							pushFollow(FOLLOW_date_in_requete823);
+							pushFollow(FOLLOW_date_in_requete822);
 							d=date();
 							state._fsp--;
 
@@ -502,7 +502,7 @@ public class tal_sqlParser extends Parser {
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:201:4: (n= nombre )
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:202:5: n= nombre
 							{
-							pushFollow(FOLLOW_nombre_in_requete851);
+							pushFollow(FOLLOW_nombre_in_requete850);
 							n=nombre();
 							state._fsp--;
 
@@ -531,14 +531,13 @@ public class tal_sqlParser extends Parser {
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:210:3: (p= params )
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:211:4: p= params
 					{
-					pushFollow(FOLLOW_params_in_requete882);
+					pushFollow(FOLLOW_params_in_requete881);
 					p=params();
 					state._fsp--;
 
 
 									ps_arbre = p;
 									req_arbre.ajouteFils(ps_arbre);
-									req_arbre.ajouteFils(new Arbre("", " from public.numero where public.numero.numero = public.titretexte.numero "));
 								
 					}
 
@@ -564,7 +563,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "email"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:220:1: email returns [Arbre email_arbre = new Arbre(\"\")] : (p= params )? ( EMAIL_MOT b= EMAIL | EMAIL_TABLE ) (p= params )? ;
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:219:1: email returns [Arbre email_arbre = new Arbre(\"\")] : (p= params )? ( EMAIL_MOT b= EMAIL | EMAIL_TABLE ) (p= params )? ;
 	public final Arbre email() throws RecognitionException {
 		Arbre email_arbre =  new Arbre("");
 
@@ -574,10 +573,10 @@ public class tal_sqlParser extends Parser {
 
 		Arbre ps_arbre;
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:221:25: ( (p= params )? ( EMAIL_MOT b= EMAIL | EMAIL_TABLE ) (p= params )? )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:223:2: (p= params )? ( EMAIL_MOT b= EMAIL | EMAIL_TABLE ) (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:220:25: ( (p= params )? ( EMAIL_MOT b= EMAIL | EMAIL_TABLE ) (p= params )? )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:222:2: (p= params )? ( EMAIL_MOT b= EMAIL | EMAIL_TABLE ) (p= params )?
 			{
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:223:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:222:2: (p= params )?
 			int alt7=2;
 			int LA7_0 = input.LA(1);
 			if ( (LA7_0==MOT||LA7_0==VAR) ) {
@@ -585,9 +584,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt7) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:223:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:222:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_email917);
+					pushFollow(FOLLOW_params_in_email916);
 					p=params();
 					state._fsp--;
 
@@ -601,7 +600,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:229:2: ( EMAIL_MOT b= EMAIL | EMAIL_TABLE )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:228:2: ( EMAIL_MOT b= EMAIL | EMAIL_TABLE )
 			int alt8=2;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0==EMAIL_MOT) ) {
@@ -619,19 +618,19 @@ public class tal_sqlParser extends Parser {
 
 			switch (alt8) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:230:2: EMAIL_MOT b= EMAIL
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:229:2: EMAIL_MOT b= EMAIL
 					{
-					match(input,EMAIL_MOT,FOLLOW_EMAIL_MOT_in_email928); 
-					b=(Token)match(input,EMAIL,FOLLOW_EMAIL_in_email934); 
+					match(input,EMAIL_MOT,FOLLOW_EMAIL_MOT_in_email927); 
+					b=(Token)match(input,EMAIL,FOLLOW_EMAIL_in_email933); 
 
 							email_arbre.ajouteFils(new Arbre(""," from public.email where (email LIKE '%"+b.getText()+"%' OR email = '"+b.getText() +"')"));
 						
 					}
 					break;
 				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:235:2: EMAIL_TABLE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:234:2: EMAIL_TABLE
 					{
-					match(input,EMAIL_TABLE,FOLLOW_EMAIL_TABLE_in_email943); 
+					match(input,EMAIL_TABLE,FOLLOW_EMAIL_TABLE_in_email942); 
 
 							email_arbre.ajouteFils(new Arbre(""," from public.email "));
 						
@@ -640,7 +639,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:239:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:238:2: (p= params )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==MOT) ) {
@@ -654,9 +653,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt9) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:239:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:238:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_email955);
+					pushFollow(FOLLOW_params_in_email954);
 					p=params();
 					state._fsp--;
 
@@ -687,7 +686,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "rubrique"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:248:1: rubrique returns [Arbre rubrique_arbre = new Arbre(\"\")] : (p= params )? (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* ) (p= params )? ;
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:247:1: rubrique returns [Arbre rubrique_arbre = new Arbre(\"\")] : (p= params )? (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* ) (p= params )? ;
 	public final Arbre rubrique() throws RecognitionException {
 		Arbre rubrique_arbre =  new Arbre("");
 
@@ -698,10 +697,10 @@ public class tal_sqlParser extends Parser {
 
 		Arbre ps_arbre;
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:249:25: ( (p= params )? (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* ) (p= params )? )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:251:2: (p= params )? (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* ) (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:248:25: ( (p= params )? (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* ) (p= params )? )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:250:2: (p= params )? (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* ) (p= params )?
 			{
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:251:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:250:2: (p= params )?
 			int alt10=2;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==MOT||LA10_0==VAR) ) {
@@ -709,9 +708,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt10) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:251:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:250:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_rubrique986);
+					pushFollow(FOLLOW_params_in_rubrique985);
 					p=params();
 					state._fsp--;
 
@@ -725,7 +724,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:257:2: (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:256:2: (b= RUBRIQUE_TABLE |b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )* )
 			int alt13=2;
 			int LA13_0 = input.LA(1);
 			if ( (LA13_0==RUBRIQUE_TABLE) ) {
@@ -743,26 +742,26 @@ public class tal_sqlParser extends Parser {
 
 			switch (alt13) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:258:3: b= RUBRIQUE_TABLE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:257:3: b= RUBRIQUE_TABLE
 					{
-					b=(Token)match(input,RUBRIQUE_TABLE,FOLLOW_RUBRIQUE_TABLE_in_rubrique1002); 
+					b=(Token)match(input,RUBRIQUE_TABLE,FOLLOW_RUBRIQUE_TABLE_in_rubrique1001); 
 
 								rubrique_arbre.ajouteFils(new Arbre(""," from public.rubrique"));
 							
 					}
 					break;
 				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:263:3: b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )*
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:262:3: b= RUBRIQUE a= VAR ( ( CONJ_ET )? b= VAR )*
 					{
-					b=(Token)match(input,RUBRIQUE,FOLLOW_RUBRIQUE_in_rubrique1017); 
+					b=(Token)match(input,RUBRIQUE,FOLLOW_RUBRIQUE_in_rubrique1016); 
 
 								rubrique_arbre.ajouteFils(new Arbre(""," from public.rubrique where"));
 							
-					a=(Token)match(input,VAR,FOLLOW_VAR_in_rubrique1029); 
+					a=(Token)match(input,VAR,FOLLOW_VAR_in_rubrique1028); 
 
 								rubrique_arbre.ajouteFils(new Arbre(""," (rubrique LIKE '%"+a.getText()+"%' OR rubrique = '"+a.getText()+"')"));
 							
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:271:3: ( ( CONJ_ET )? b= VAR )*
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:270:3: ( ( CONJ_ET )? b= VAR )*
 					loop12:
 					while (true) {
 						int alt12=2;
@@ -773,9 +772,9 @@ public class tal_sqlParser extends Parser {
 
 						switch (alt12) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:271:4: ( CONJ_ET )? b= VAR
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:270:4: ( CONJ_ET )? b= VAR
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:271:4: ( CONJ_ET )?
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:270:4: ( CONJ_ET )?
 							int alt11=2;
 							int LA11_0 = input.LA(1);
 							if ( (LA11_0==CONJ_ET) ) {
@@ -783,15 +782,15 @@ public class tal_sqlParser extends Parser {
 							}
 							switch (alt11) {
 								case 1 :
-									// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:271:4: CONJ_ET
+									// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:270:4: CONJ_ET
 									{
-									match(input,CONJ_ET,FOLLOW_CONJ_ET_in_rubrique1038); 
+									match(input,CONJ_ET,FOLLOW_CONJ_ET_in_rubrique1037); 
 									}
 									break;
 
 							}
 
-							b=(Token)match(input,VAR,FOLLOW_VAR_in_rubrique1045); 
+							b=(Token)match(input,VAR,FOLLOW_VAR_in_rubrique1044); 
 
 										rubrique_arbre.ajouteFils(new Arbre(""," OR (rubrique LIKE '%"+b.getText()+"%' OR rubrique = '"+b.getText()+"')"));
 									
@@ -808,7 +807,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:276:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:275:2: (p= params )?
 			int alt14=2;
 			int LA14_0 = input.LA(1);
 			if ( (LA14_0==MOT) ) {
@@ -822,9 +821,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt14) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:276:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:275:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_rubrique1062);
+					pushFollow(FOLLOW_params_in_rubrique1061);
 					p=params();
 					state._fsp--;
 
@@ -855,7 +854,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "nombre"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:286:1: nombre returns [Arbre nombre_arbre = new Arbre(\"\")] : (p= params )? ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE ) (p= params )? ;
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:285:1: nombre returns [Arbre nombre_arbre = new Arbre(\"\")] : (p= params )? ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE ) (p= params )? ;
 	public final Arbre nombre() throws RecognitionException {
 		Arbre nombre_arbre =  new Arbre("");
 
@@ -865,10 +864,10 @@ public class tal_sqlParser extends Parser {
 
 		Arbre ps_arbre;
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:287:25: ( (p= params )? ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE ) (p= params )? )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:289:2: (p= params )? ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE ) (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:286:25: ( (p= params )? ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE ) (p= params )? )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:288:2: (p= params )? ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE ) (p= params )?
 			{
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:289:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:288:2: (p= params )?
 			int alt15=2;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==MOT||LA15_0==VAR) ) {
@@ -876,9 +875,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt15) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:289:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:288:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_nombre1094);
+					pushFollow(FOLLOW_params_in_nombre1093);
 					p=params();
 					state._fsp--;
 
@@ -892,7 +891,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:295:2: ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:294:2: ( ( FICHIER_TABLE | BULLETIN_TABLE ) | ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE | FICHIER b= NOMBRE |b= NOMBRE )
 			int alt18=4;
 			switch ( input.LA(1) ) {
 			case BULLETIN_TABLE:
@@ -942,7 +941,7 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt18) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:296:2: ( FICHIER_TABLE | BULLETIN_TABLE )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:295:2: ( FICHIER_TABLE | BULLETIN_TABLE )
 					{
 					if ( input.LA(1)==BULLETIN_TABLE||input.LA(1)==FICHIER_TABLE ) {
 						input.consume();
@@ -958,9 +957,9 @@ public class tal_sqlParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:301:2: ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:300:2: ( FICHIER )? BULLETIN ( FICHIER )? b= NOMBRE
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:301:2: ( FICHIER )?
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:300:2: ( FICHIER )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
 					if ( (LA16_0==FICHIER) ) {
@@ -968,16 +967,16 @@ public class tal_sqlParser extends Parser {
 					}
 					switch (alt16) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:301:2: FICHIER
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:300:2: FICHIER
 							{
-							match(input,FICHIER,FOLLOW_FICHIER_in_nombre1120); 
+							match(input,FICHIER,FOLLOW_FICHIER_in_nombre1119); 
 							}
 							break;
 
 					}
 
-					match(input,BULLETIN,FOLLOW_BULLETIN_in_nombre1124); 
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:303:2: ( FICHIER )?
+					match(input,BULLETIN,FOLLOW_BULLETIN_in_nombre1123); 
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:302:2: ( FICHIER )?
 					int alt17=2;
 					int LA17_0 = input.LA(1);
 					if ( (LA17_0==FICHIER) ) {
@@ -985,34 +984,34 @@ public class tal_sqlParser extends Parser {
 					}
 					switch (alt17) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:303:2: FICHIER
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:302:2: FICHIER
 							{
-							match(input,FICHIER,FOLLOW_FICHIER_in_nombre1127); 
+							match(input,FICHIER,FOLLOW_FICHIER_in_nombre1126); 
 							}
 							break;
 
 					}
 
-					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1135); 
+					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1134); 
 
 							nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (numero LIKE '%"+b.getText()+"%' OR numero = '"+b.getText() +"')"));
 						
 					}
 					break;
 				case 3 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:309:2: FICHIER b= NOMBRE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:308:2: FICHIER b= NOMBRE
 					{
-					match(input,FICHIER,FOLLOW_FICHIER_in_nombre1144); 
-					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1151); 
+					match(input,FICHIER,FOLLOW_FICHIER_in_nombre1143); 
+					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1150); 
 
 							nombre_arbre.ajouteFils(new Arbre(""," from public.numero where (fichier LIKE '%"+b.getText()+"%' )"));
 						
 					}
 					break;
 				case 4 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:315:2: b= NOMBRE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:314:2: b= NOMBRE
 					{
-					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1164); 
+					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1163); 
 
 							nombre_arbre.ajouteFils(new Arbre(""," from public.numero from public.date where public.date.numero = public.numero.numero where (numero.numero LIKE '%"+b.getText()+"%' OR numero.numero = '"+b.getText() +"') OR (numero.fichier LIKE '%"+b.getText()+"%' )"
 							+" OR (date.jour = '"+b.getText()+"' OR date.mois = '"+b.getText() +"' OR date.annee = '"+b.getText()+"')"));
@@ -1022,7 +1021,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:320:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:319:2: (p= params )?
 			int alt19=2;
 			int LA19_0 = input.LA(1);
 			if ( (LA19_0==MOT) ) {
@@ -1036,9 +1035,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt19) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:320:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:319:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_nombre1176);
+					pushFollow(FOLLOW_params_in_nombre1175);
 					p=params();
 					state._fsp--;
 
@@ -1069,7 +1068,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "date"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:327:1: date returns [Arbre date_arbre = new Arbre(\"\")] : (p= params )? ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) ) (p= params )? ;
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:326:1: date returns [Arbre date_arbre = new Arbre(\"\")] : (p= params )? ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) ) (p= params )? ;
 	public final Arbre date() throws RecognitionException {
 		Arbre date_arbre =  new Arbre("");
 
@@ -1080,10 +1079,10 @@ public class tal_sqlParser extends Parser {
 
 		Arbre ps_arbre;
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:328:25: ( (p= params )? ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) ) (p= params )? )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:330:2: (p= params )? ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) ) (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:327:25: ( (p= params )? ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) ) (p= params )? )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:329:2: (p= params )? ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) ) (p= params )?
 			{
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:330:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:329:2: (p= params )?
 			int alt20=2;
 			int LA20_0 = input.LA(1);
 			if ( (LA20_0==MOT||LA20_0==VAR) ) {
@@ -1091,9 +1090,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt20) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:330:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:329:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_date1207);
+					pushFollow(FOLLOW_params_in_date1206);
 					p=params();
 					state._fsp--;
 
@@ -1107,7 +1106,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:336:2: ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:335:2: ( (b= DATE c= NOMBRE ) | (b= DATE ) | ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) ) )
 			int alt22=3;
 			int LA22_0 = input.LA(1);
 			if ( (LA22_0==DATE) ) {
@@ -1144,16 +1143,16 @@ public class tal_sqlParser extends Parser {
 
 			switch (alt22) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:336:4: (b= DATE c= NOMBRE )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:335:4: (b= DATE c= NOMBRE )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:336:4: (b= DATE c= NOMBRE )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:336:5: b= DATE c= NOMBRE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:335:4: (b= DATE c= NOMBRE )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:335:5: b= DATE c= NOMBRE
 					{
-					b=(Token)match(input,DATE,FOLLOW_DATE_in_date1222); 
+					b=(Token)match(input,DATE,FOLLOW_DATE_in_date1221); 
 
 								date_arbre.ajouteFils(new Arbre(""," from public.date "));
 							
-					c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1234); 
+					c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1233); 
 
 								date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"' OR mois = '"+c.getText() +"' OR annee = '"+c.getText()+"')"));
 							
@@ -1162,12 +1161,12 @@ public class tal_sqlParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:345:3: (b= DATE )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:344:3: (b= DATE )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:345:3: (b= DATE )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:345:4: b= DATE
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:344:3: (b= DATE )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:344:4: b= DATE
 					{
-					b=(Token)match(input,DATE,FOLLOW_DATE_in_date1252); 
+					b=(Token)match(input,DATE,FOLLOW_DATE_in_date1251); 
 
 								date_arbre.ajouteFils(new Arbre(""," from public.date "));
 							
@@ -1176,9 +1175,9 @@ public class tal_sqlParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:350:3: ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:349:3: ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:350:3: ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:349:3: ( (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) | (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) | (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) | (b= MOIS c= NOMBRE ) | (b= ANNEE c= NOMBRE ) | (b= JOUR c= NOMBRE ) )
 					int alt21=13;
 					switch ( input.LA(1) ) {
 					case JOUR:
@@ -1716,36 +1715,36 @@ public class tal_sqlParser extends Parser {
 					}
 					switch (alt21) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:351:4: (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:350:4: (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:351:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:351:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:350:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:350:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1275); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1274); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1289); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1288); 
 
 											date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:359:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:359:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:358:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:358:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1305); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1314); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1304); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1313); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:364:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:364:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:363:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:363:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1330); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1339); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1329); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1338); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 										
@@ -1754,36 +1753,36 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:370:4: (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:369:4: (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:370:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:370:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:369:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:369:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1361); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1360); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1375); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1374); 
 
 											date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:378:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:378:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:377:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:377:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1391); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1400); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1390); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1399); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:383:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:383:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:382:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:382:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1416); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1425); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1415); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1424); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 										
@@ -1792,36 +1791,36 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 3 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:389:4: (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:388:4: (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:389:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:389:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:388:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:388:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1447); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1446); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1461); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1460); 
 
 											date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:397:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:397:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:396:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:396:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1477); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1486); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1476); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1485); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:402:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:402:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:401:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:401:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1502); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1511); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1501); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1510); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 										
@@ -1830,36 +1829,36 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 4 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:408:4: (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:407:4: (b= MOIS c= NOMBRE ) (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:408:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:408:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:407:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:407:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1533); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1532); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1548); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1547); 
 
 											date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:416:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:416:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:415:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:415:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1564); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1573); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1563); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1572); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:421:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:421:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:420:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:420:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1589); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1598); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1588); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1597); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 										
@@ -1868,36 +1867,36 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 5 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:427:4: (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:426:4: (b= JOUR c= NOMBRE ) (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:427:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:427:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:426:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:426:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1620); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1619); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1634); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1633); 
 
 											date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:435:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:435:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:434:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:434:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1650); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1659); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1649); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1658); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:440:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:440:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:439:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:439:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1675); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1684); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1674); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1683); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 										
@@ -1906,36 +1905,36 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 6 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:446:4: (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:445:4: (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:446:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:446:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:445:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:445:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1705); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1704); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1720); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1719); 
 
 											date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:454:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:454:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:453:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:453:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1736); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1745); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1735); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1744); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:459:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:459:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:458:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:458:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1761); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1770); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1760); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1769); 
 
 											date_arbre.ajouteFils(new Arbre("","AND (jour = '"+c.getText()+"')"));
 										
@@ -1944,26 +1943,26 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 7 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:465:4: (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:464:4: (b= ANNEE c= NOMBRE ) (b= JOUR c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:465:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:465:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:464:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:464:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1791); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1790); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1805); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1804); 
 
 											date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:473:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:473:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:472:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:472:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1821); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1831); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1820); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1830); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (jour = '"+c.getText()+"')"));
 										
@@ -1972,26 +1971,26 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 8 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:479:4: (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:478:4: (b= JOUR c= NOMBRE ) (b= ANNEE c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:479:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:479:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:478:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:478:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1853); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date1852); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1868); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1867); 
 
 											date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:487:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:487:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:486:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:486:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1884); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1893); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1883); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1892); 
 
 											date_arbre.ajouteFils(new Arbre("","AND (annee = '"+c.getText()+"')"));
 										
@@ -2000,26 +1999,26 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 9 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:493:4: (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:492:4: (b= MOIS c= NOMBRE ) (b= ANNEE c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:493:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:493:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:492:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:492:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1915); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date1914); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1930); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1929); 
 
 											date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:501:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:501:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:500:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:500:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1946); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1955); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1945); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1954); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (annee = '"+c.getText()+"')"));
 										
@@ -2028,26 +2027,26 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 10 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:507:4: (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:506:4: (b= ANNEE c= NOMBRE ) (b= MOIS c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:507:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:507:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:506:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:506:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1976); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date1975); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1990); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date1989); 
 
 											date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 										
 							}
 
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:515:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:515:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:514:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:514:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date2006); 
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2015); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date2005); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2014); 
 
 											date_arbre.ajouteFils(new Arbre(""," AND (mois = '"+c.getText() +"')"));
 										
@@ -2056,16 +2055,16 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 11 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:521:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:520:4: (b= MOIS c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:521:4: (b= MOIS c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:521:5: b= MOIS c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:520:4: (b= MOIS c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:520:5: b= MOIS c= NOMBRE
 							{
-							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date2036); 
+							b=(Token)match(input,MOIS,FOLLOW_MOIS_in_date2035); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2051); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2050); 
 
 											date_arbre.ajouteFils(new Arbre("","where (mois = '"+c.getText() +"')"));
 										
@@ -2074,16 +2073,16 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 12 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:530:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:529:4: (b= ANNEE c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:530:4: (b= ANNEE c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:530:5: b= ANNEE c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:529:4: (b= ANNEE c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:529:5: b= ANNEE c= NOMBRE
 							{
-							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date2072); 
+							b=(Token)match(input,ANNEE,FOLLOW_ANNEE_in_date2071); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2086); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2085); 
 
 											date_arbre.ajouteFils(new Arbre("","where (annee = '"+c.getText()+"')"));
 										
@@ -2092,16 +2091,16 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						case 13 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:539:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:538:4: (b= JOUR c= NOMBRE )
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:539:4: (b= JOUR c= NOMBRE )
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:539:5: b= JOUR c= NOMBRE
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:538:4: (b= JOUR c= NOMBRE )
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:538:5: b= JOUR c= NOMBRE
 							{
-							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date2107); 
+							b=(Token)match(input,JOUR,FOLLOW_JOUR_in_date2106); 
 
 											date_arbre.ajouteFils(new Arbre(""," from public.date "));
 										
-							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2122); 
+							c=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_date2121); 
 
 											date_arbre.ajouteFils(new Arbre("","where (jour = '"+c.getText()+"')"));
 										
@@ -2117,7 +2116,7 @@ public class tal_sqlParser extends Parser {
 
 			}
 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:550:2: (p= params )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:549:2: (p= params )?
 			int alt23=2;
 			int LA23_0 = input.LA(1);
 			if ( (LA23_0==MOT) ) {
@@ -2131,9 +2130,9 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt23) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:550:3: p= params
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:549:3: p= params
 					{
-					pushFollow(FOLLOW_params_in_date2146);
+					pushFollow(FOLLOW_params_in_date2145);
 					p=params();
 					state._fsp--;
 
@@ -2164,7 +2163,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "params"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:559:1: params returns [Arbre arbre = new Arbre(\"\")] : ( MOT )? a= VAR ( ( MOT )? p= param )* ;
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:558:1: params returns [Arbre arbre = new Arbre(\"\")] : ( MOT )? a= VAR ( ( MOT )? p= param )* ;
 	public final Arbre params() throws RecognitionException {
 		Arbre arbre =  new Arbre("");
 
@@ -2174,10 +2173,10 @@ public class tal_sqlParser extends Parser {
 
 		Arbre pm_arbre;
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:560:25: ( ( MOT )? a= VAR ( ( MOT )? p= param )* )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:561:2: ( MOT )? a= VAR ( ( MOT )? p= param )*
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:559:25: ( ( MOT )? a= VAR ( ( MOT )? p= param )* )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:560:2: ( MOT )? a= VAR ( ( MOT )? p= param )*
 			{
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:561:2: ( MOT )?
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:560:2: ( MOT )?
 			int alt24=2;
 			int LA24_0 = input.LA(1);
 			if ( (LA24_0==MOT) ) {
@@ -2185,19 +2184,19 @@ public class tal_sqlParser extends Parser {
 			}
 			switch (alt24) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:561:2: MOT
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:560:2: MOT
 					{
-					match(input,MOT,FOLLOW_MOT_in_params2171); 
+					match(input,MOT,FOLLOW_MOT_in_params2170); 
 					}
 					break;
 
 			}
 
-			a=(Token)match(input,VAR,FOLLOW_VAR_in_params2179); 
+			a=(Token)match(input,VAR,FOLLOW_VAR_in_params2178); 
 
 					arbre.ajouteFils(new Arbre(""," from public.titretexte where mot LIKE '%"+a.getText()+"%'"));
 				
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:566:2: ( ( MOT )? p= param )*
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:565:2: ( ( MOT )? p= param )*
 			loop26:
 			while (true) {
 				int alt26=2;
@@ -2215,9 +2214,9 @@ public class tal_sqlParser extends Parser {
 
 				switch (alt26) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:566:3: ( MOT )? p= param
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:565:3: ( MOT )? p= param
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:566:3: ( MOT )?
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:565:3: ( MOT )?
 					int alt25=2;
 					int LA25_0 = input.LA(1);
 					if ( (LA25_0==MOT) ) {
@@ -2225,15 +2224,15 @@ public class tal_sqlParser extends Parser {
 					}
 					switch (alt25) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:566:3: MOT
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:565:3: MOT
 							{
-							match(input,MOT,FOLLOW_MOT_in_params2186); 
+							match(input,MOT,FOLLOW_MOT_in_params2185); 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_param_in_params2193);
+					pushFollow(FOLLOW_param_in_params2192);
 					p=param();
 					state._fsp--;
 
@@ -2266,7 +2265,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "param"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:1: param returns [Arbre p_arbre = new Arbre(\"\")] : ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) );
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:573:1: param returns [Arbre p_arbre = new Arbre(\"\")] : ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) );
 	public final Arbre param() throws RecognitionException {
 		Arbre p_arbre =  new Arbre("");
 
@@ -2275,7 +2274,7 @@ public class tal_sqlParser extends Parser {
 		Token b=null;
 
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:46: ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:573:46: ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) )
 			int alt28=2;
 			int LA28_0 = input.LA(1);
 			if ( (LA28_0==CONJ_OU||LA28_0==VAR) ) {
@@ -2293,12 +2292,12 @@ public class tal_sqlParser extends Parser {
 
 			switch (alt28) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:575:2: ( ( CONJ_OU )? c= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:2: ( ( CONJ_OU )? c= VAR )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:575:2: ( ( CONJ_OU )? c= VAR )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:575:3: ( CONJ_OU )? c= VAR
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:2: ( ( CONJ_OU )? c= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:3: ( CONJ_OU )? c= VAR
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:575:3: ( CONJ_OU )?
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:3: ( CONJ_OU )?
 					int alt27=2;
 					int LA27_0 = input.LA(1);
 					if ( (LA27_0==CONJ_OU) ) {
@@ -2306,15 +2305,15 @@ public class tal_sqlParser extends Parser {
 					}
 					switch (alt27) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:575:3: CONJ_OU
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:574:3: CONJ_OU
 							{
-							match(input,CONJ_OU,FOLLOW_CONJ_OU_in_param2213); 
+							match(input,CONJ_OU,FOLLOW_CONJ_OU_in_param2212); 
 							}
 							break;
 
 					}
 
-					c=(Token)match(input,VAR,FOLLOW_VAR_in_param2219); 
+					c=(Token)match(input,VAR,FOLLOW_VAR_in_param2218); 
 
 							p_arbre.ajouteFils(new Arbre(""," OR mot LIKE '%"+c.getText()+"%'"));
 						
@@ -2323,13 +2322,13 @@ public class tal_sqlParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:579:2: ( CONJ_ET b= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:578:2: ( CONJ_ET b= VAR )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:579:2: ( CONJ_ET b= VAR )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:579:3: CONJ_ET b= VAR
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:578:2: ( CONJ_ET b= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/tal_sql.g:578:3: CONJ_ET b= VAR
 					{
-					match(input,CONJ_ET,FOLLOW_CONJ_ET_in_param2229); 
-					b=(Token)match(input,VAR,FOLLOW_VAR_in_param2235); 
+					match(input,CONJ_ET,FOLLOW_CONJ_ET_in_param2228); 
+					b=(Token)match(input,VAR,FOLLOW_VAR_in_param2234); 
 
 							p_arbre.ajouteFils(new Arbre(""," AND (mot LIKE '%"+b.getText()+"%')"));
 						
@@ -2689,118 +2688,118 @@ public class tal_sqlParser extends Parser {
 		}
 	}
 
-	public static final BitSet FOLLOW_requete_in_listerequetes335 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SELECT_in_requete374 = new BitSet(new long[]{0x00000000046BFA70L});
-	public static final BitSet FOLLOW_SELECT_COUNT_in_requete390 = new BitSet(new long[]{0x00000000046BFA70L});
-	public static final BitSet FOLLOW_rubrique_in_requete420 = new BitSet(new long[]{0x00000000040BFA72L});
-	public static final BitSet FOLLOW_date_in_requete441 = new BitSet(new long[]{0x00000000040BFA72L});
-	public static final BitSet FOLLOW_nombre_in_requete469 = new BitSet(new long[]{0x00000000040BFA72L});
-	public static final BitSet FOLLOW_email_in_requete497 = new BitSet(new long[]{0x00000000040BFA72L});
-	public static final BitSet FOLLOW_date_in_requete529 = new BitSet(new long[]{0x00000000046A7862L});
-	public static final BitSet FOLLOW_rubrique_in_requete550 = new BitSet(new long[]{0x00000000046A7862L});
-	public static final BitSet FOLLOW_nombre_in_requete578 = new BitSet(new long[]{0x00000000046A7862L});
-	public static final BitSet FOLLOW_email_in_requete606 = new BitSet(new long[]{0x00000000046A7862L});
-	public static final BitSet FOLLOW_nombre_in_requete638 = new BitSet(new long[]{0x00000000046BFA72L});
-	public static final BitSet FOLLOW_rubrique_in_requete659 = new BitSet(new long[]{0x00000000046BFA72L});
-	public static final BitSet FOLLOW_date_in_requete687 = new BitSet(new long[]{0x00000000046BFA72L});
-	public static final BitSet FOLLOW_email_in_requete715 = new BitSet(new long[]{0x00000000046BFA72L});
-	public static final BitSet FOLLOW_nombre_in_requete742 = new BitSet(new long[]{0x00000000046BFA72L});
-	public static final BitSet FOLLOW_email_in_requete774 = new BitSet(new long[]{0x00000000046BE272L});
-	public static final BitSet FOLLOW_rubrique_in_requete795 = new BitSet(new long[]{0x00000000046BE272L});
-	public static final BitSet FOLLOW_date_in_requete823 = new BitSet(new long[]{0x00000000046BE272L});
-	public static final BitSet FOLLOW_nombre_in_requete851 = new BitSet(new long[]{0x00000000046BE272L});
-	public static final BitSet FOLLOW_params_in_requete882 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_params_in_email917 = new BitSet(new long[]{0x0000000000001800L});
-	public static final BitSet FOLLOW_EMAIL_MOT_in_email928 = new BitSet(new long[]{0x0000000000000400L});
-	public static final BitSet FOLLOW_EMAIL_in_email934 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_EMAIL_TABLE_in_email943 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_params_in_email955 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_params_in_rubrique986 = new BitSet(new long[]{0x0000000000600000L});
-	public static final BitSet FOLLOW_RUBRIQUE_TABLE_in_rubrique1002 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_RUBRIQUE_in_rubrique1017 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_rubrique1029 = new BitSet(new long[]{0x0000000004020082L});
-	public static final BitSet FOLLOW_CONJ_ET_in_rubrique1038 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_rubrique1045 = new BitSet(new long[]{0x0000000004020082L});
-	public static final BitSet FOLLOW_params_in_rubrique1062 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_params_in_nombre1094 = new BitSet(new long[]{0x0000000000086060L});
-	public static final BitSet FOLLOW_set_in_nombre1105 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_FICHIER_in_nombre1120 = new BitSet(new long[]{0x0000000000000020L});
-	public static final BitSet FOLLOW_BULLETIN_in_nombre1124 = new BitSet(new long[]{0x0000000000082000L});
-	public static final BitSet FOLLOW_FICHIER_in_nombre1127 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_nombre1135 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_FICHIER_in_nombre1144 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_nombre1151 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_NOMBRE_in_nombre1164 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_params_in_nombre1176 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_params_in_date1207 = new BitSet(new long[]{0x0000000000018210L});
-	public static final BitSet FOLLOW_DATE_in_date1222 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1234 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_DATE_in_date1252 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_JOUR_in_date1275 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1289 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ANNEE_in_date1305 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1314 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_MOIS_in_date1330 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1339 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_ANNEE_in_date1361 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1375 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_JOUR_in_date1391 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1400 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_MOIS_in_date1416 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1425 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_ANNEE_in_date1447 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1461 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_MOIS_in_date1477 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1486 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_JOUR_in_date1502 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1511 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_MOIS_in_date1533 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1548 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_JOUR_in_date1564 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1573 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ANNEE_in_date1589 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1598 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_JOUR_in_date1620 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1634 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_MOIS_in_date1650 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1659 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ANNEE_in_date1675 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1684 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_MOIS_in_date1705 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1720 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ANNEE_in_date1736 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1745 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_JOUR_in_date1761 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1770 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_ANNEE_in_date1791 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1805 = new BitSet(new long[]{0x0000000000008000L});
-	public static final BitSet FOLLOW_JOUR_in_date1821 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1831 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_JOUR_in_date1853 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1868 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ANNEE_in_date1884 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1893 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_MOIS_in_date1915 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1930 = new BitSet(new long[]{0x0000000000000010L});
-	public static final BitSet FOLLOW_ANNEE_in_date1946 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1955 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_ANNEE_in_date1976 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date1990 = new BitSet(new long[]{0x0000000000010000L});
-	public static final BitSet FOLLOW_MOIS_in_date2006 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date2015 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_MOIS_in_date2036 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date2051 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_ANNEE_in_date2072 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date2086 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_JOUR_in_date2107 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_NOMBRE_in_date2122 = new BitSet(new long[]{0x0000000004020002L});
-	public static final BitSet FOLLOW_params_in_date2146 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MOT_in_params2171 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_params2179 = new BitSet(new long[]{0x0000000004020182L});
-	public static final BitSet FOLLOW_MOT_in_params2186 = new BitSet(new long[]{0x0000000004000180L});
-	public static final BitSet FOLLOW_param_in_params2193 = new BitSet(new long[]{0x0000000004020182L});
-	public static final BitSet FOLLOW_CONJ_OU_in_param2213 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_param2219 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONJ_ET_in_param2229 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_param2235 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_requete_in_listerequetes334 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SELECT_in_requete373 = new BitSet(new long[]{0x00000000046BFA70L});
+	public static final BitSet FOLLOW_SELECT_COUNT_in_requete389 = new BitSet(new long[]{0x00000000046BFA70L});
+	public static final BitSet FOLLOW_rubrique_in_requete419 = new BitSet(new long[]{0x00000000040BFA72L});
+	public static final BitSet FOLLOW_date_in_requete440 = new BitSet(new long[]{0x00000000040BFA72L});
+	public static final BitSet FOLLOW_nombre_in_requete468 = new BitSet(new long[]{0x00000000040BFA72L});
+	public static final BitSet FOLLOW_email_in_requete496 = new BitSet(new long[]{0x00000000040BFA72L});
+	public static final BitSet FOLLOW_date_in_requete528 = new BitSet(new long[]{0x00000000046A7862L});
+	public static final BitSet FOLLOW_rubrique_in_requete549 = new BitSet(new long[]{0x00000000046A7862L});
+	public static final BitSet FOLLOW_nombre_in_requete577 = new BitSet(new long[]{0x00000000046A7862L});
+	public static final BitSet FOLLOW_email_in_requete605 = new BitSet(new long[]{0x00000000046A7862L});
+	public static final BitSet FOLLOW_nombre_in_requete637 = new BitSet(new long[]{0x00000000046BFA72L});
+	public static final BitSet FOLLOW_rubrique_in_requete658 = new BitSet(new long[]{0x00000000046BFA72L});
+	public static final BitSet FOLLOW_date_in_requete686 = new BitSet(new long[]{0x00000000046BFA72L});
+	public static final BitSet FOLLOW_email_in_requete714 = new BitSet(new long[]{0x00000000046BFA72L});
+	public static final BitSet FOLLOW_nombre_in_requete741 = new BitSet(new long[]{0x00000000046BFA72L});
+	public static final BitSet FOLLOW_email_in_requete773 = new BitSet(new long[]{0x00000000046BE272L});
+	public static final BitSet FOLLOW_rubrique_in_requete794 = new BitSet(new long[]{0x00000000046BE272L});
+	public static final BitSet FOLLOW_date_in_requete822 = new BitSet(new long[]{0x00000000046BE272L});
+	public static final BitSet FOLLOW_nombre_in_requete850 = new BitSet(new long[]{0x00000000046BE272L});
+	public static final BitSet FOLLOW_params_in_requete881 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_params_in_email916 = new BitSet(new long[]{0x0000000000001800L});
+	public static final BitSet FOLLOW_EMAIL_MOT_in_email927 = new BitSet(new long[]{0x0000000000000400L});
+	public static final BitSet FOLLOW_EMAIL_in_email933 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_EMAIL_TABLE_in_email942 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_params_in_email954 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_params_in_rubrique985 = new BitSet(new long[]{0x0000000000600000L});
+	public static final BitSet FOLLOW_RUBRIQUE_TABLE_in_rubrique1001 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_RUBRIQUE_in_rubrique1016 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_rubrique1028 = new BitSet(new long[]{0x0000000004020082L});
+	public static final BitSet FOLLOW_CONJ_ET_in_rubrique1037 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_rubrique1044 = new BitSet(new long[]{0x0000000004020082L});
+	public static final BitSet FOLLOW_params_in_rubrique1061 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_params_in_nombre1093 = new BitSet(new long[]{0x0000000000086060L});
+	public static final BitSet FOLLOW_set_in_nombre1104 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_FICHIER_in_nombre1119 = new BitSet(new long[]{0x0000000000000020L});
+	public static final BitSet FOLLOW_BULLETIN_in_nombre1123 = new BitSet(new long[]{0x0000000000082000L});
+	public static final BitSet FOLLOW_FICHIER_in_nombre1126 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_nombre1134 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_FICHIER_in_nombre1143 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_nombre1150 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_NOMBRE_in_nombre1163 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_params_in_nombre1175 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_params_in_date1206 = new BitSet(new long[]{0x0000000000018210L});
+	public static final BitSet FOLLOW_DATE_in_date1221 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1233 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_DATE_in_date1251 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_JOUR_in_date1274 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1288 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ANNEE_in_date1304 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1313 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_MOIS_in_date1329 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1338 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_ANNEE_in_date1360 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1374 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_JOUR_in_date1390 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1399 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_MOIS_in_date1415 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1424 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_ANNEE_in_date1446 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1460 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_MOIS_in_date1476 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1485 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_JOUR_in_date1501 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1510 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_MOIS_in_date1532 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1547 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_JOUR_in_date1563 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1572 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ANNEE_in_date1588 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1597 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_JOUR_in_date1619 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1633 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_MOIS_in_date1649 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1658 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ANNEE_in_date1674 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1683 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_MOIS_in_date1704 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1719 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ANNEE_in_date1735 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1744 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_JOUR_in_date1760 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1769 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_ANNEE_in_date1790 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1804 = new BitSet(new long[]{0x0000000000008000L});
+	public static final BitSet FOLLOW_JOUR_in_date1820 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1830 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_JOUR_in_date1852 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1867 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ANNEE_in_date1883 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1892 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_MOIS_in_date1914 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1929 = new BitSet(new long[]{0x0000000000000010L});
+	public static final BitSet FOLLOW_ANNEE_in_date1945 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1954 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_ANNEE_in_date1975 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date1989 = new BitSet(new long[]{0x0000000000010000L});
+	public static final BitSet FOLLOW_MOIS_in_date2005 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date2014 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_MOIS_in_date2035 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date2050 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_ANNEE_in_date2071 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date2085 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_JOUR_in_date2106 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_NOMBRE_in_date2121 = new BitSet(new long[]{0x0000000004020002L});
+	public static final BitSet FOLLOW_params_in_date2145 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_MOT_in_params2170 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_params2178 = new BitSet(new long[]{0x0000000004020182L});
+	public static final BitSet FOLLOW_MOT_in_params2185 = new BitSet(new long[]{0x0000000004000180L});
+	public static final BitSet FOLLOW_param_in_params2192 = new BitSet(new long[]{0x0000000004020182L});
+	public static final BitSet FOLLOW_CONJ_OU_in_param2212 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_param2218 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONJ_ET_in_param2228 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_param2234 = new BitSet(new long[]{0x0000000000000002L});
 }
