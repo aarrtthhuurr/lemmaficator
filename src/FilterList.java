@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class FilterList {
+class FilterList {
     private List<String> list;
 
     FilterList(String filePath) {
@@ -29,7 +29,7 @@ public class FilterList {
         return list;
     }
 
-    public List<String> removeFrom(List<String> tokens) {
+    List<String> removeFrom(List<String> tokens) {
         return tokens.stream().filter(token -> !list.contains(token)).collect(Collectors.toList());
     }
 }

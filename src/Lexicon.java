@@ -4,10 +4,10 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-public class Lexicon {
+class Lexicon {
     private Map<String, String> map;
 
-    public Lexicon(String filePath) {
+    Lexicon(String filePath) {
         map = new LinkedHashMap<>();
 
         try {
@@ -25,7 +25,7 @@ public class Lexicon {
         }
     }
 
-    public Map<String, String> getMap() {
+    Map<String, String> getMap() {
         return map;
     }
 

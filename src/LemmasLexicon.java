@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class LemmasLexicon extends Lexicon {
+class LemmasLexicon extends Lexicon {
     private Map<String, String> ignored;
 
     public LemmasLexicon(String filePath) {
@@ -10,12 +10,12 @@ public class LemmasLexicon extends Lexicon {
     }
 
     // Ignored tokens will be returned as if they were a Lemma
-    public LemmasLexicon(String filePath, Map<String, String> ignored) {
+    LemmasLexicon(String filePath, Map<String, String> ignored) {
         super(filePath);
         this.ignored = ignored;
     }
 
-    public String getLemma(String token) {
+    String getLemma(String token) {
         if (ignored.containsKey(token)) {
             return ignored.get(token);
         }

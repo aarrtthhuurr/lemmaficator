@@ -2,11 +2,11 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SQLManager {
+class SQLManager {
 
     private Connection connection;
 
-    public SQLManager(String url, String username, String password, String database) {
+    SQLManager(String url, String username, String password, String database) {
 
         try {
             Class.forName("org.postgresql.Driver");
@@ -15,12 +15,12 @@ public class SQLManager {
                     username,
                     password
             );
-        } catch(ClassNotFoundException | SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public List<String> request(String request) {
+    List<String> request(String request) {
         List<String> rows = new ArrayList<>();
 
         try {
@@ -30,9 +30,9 @@ public class SQLManager {
             while (resultSet.next()) {
                 StringBuilder row = new StringBuilder();
                 for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
-                    row.append(resultSet.getObject(i).toString());
+                    row.append(resultSet.getObject(i).toString().trim()).append("\t");
                 }
-                rows.add(row.toString().replaceAll("\\s+", "\t"));
+                rows.add(row.toString().substring(0, row.toString().length() - 1));
             }
 
             return rows;
@@ -40,9 +40,5 @@ public class SQLManager {
             System.err.println(e.getMessage());
             return rows;
         }
-
-
-
-
     }
 }
