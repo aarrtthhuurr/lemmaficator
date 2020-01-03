@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-03 17:50:50
+// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-03 17:59:49
 
 package grammar;
 
@@ -2163,7 +2163,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "params"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:558:1: params returns [Arbre arbre = new Arbre(\"\")] : ( ( ( MOT )? a= VAR ) | ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param ) );
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:558:1: params returns [Arbre arbre = new Arbre(\"\")] : ( ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param ) | ( ( MOT )? a= VAR ) );
 	public final Arbre params() throws RecognitionException {
 		Arbre arbre =  new Arbre("");
 
@@ -2173,28 +2173,21 @@ public class tal_sqlParser extends Parser {
 
 		Arbre pm_arbre;
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:559:25: ( ( ( MOT )? a= VAR ) | ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param ) )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:559:25: ( ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param ) | ( ( MOT )? a= VAR ) )
 			int alt29=2;
 			int LA29_0 = input.LA(1);
 			if ( (LA29_0==MOT) ) {
 				int LA29_1 = input.LA(2);
 				if ( (LA29_1==VAR) ) {
 					switch ( input.LA(3) ) {
-					case EOF:
-					case EMAIL_MOT:
-					case EMAIL_TABLE:
-						{
-						alt29=1;
-						}
-						break;
 					case MOT:
 						{
-						int LA29_4 = input.LA(4);
-						if ( (LA29_4==VAR) ) {
+						int LA29_3 = input.LA(4);
+						if ( (LA29_3==CONJ_OU) ) {
 							alt29=1;
 						}
-						else if ( ((LA29_4 >= CONJ_ET && LA29_4 <= CONJ_OU)) ) {
-							alt29=2;
+						else if ( (LA29_3==CONJ_ET||LA29_3==VAR) ) {
+							alt29=1;
 						}
 
 						else {
@@ -2204,7 +2197,7 @@ public class tal_sqlParser extends Parser {
 									input.consume();
 								}
 								NoViableAltException nvae =
-									new NoViableAltException("", 29, 4, input);
+									new NoViableAltException("", 29, 3, input);
 								throw nvae;
 							} finally {
 								input.rewind(nvaeMark);
@@ -2213,10 +2206,24 @@ public class tal_sqlParser extends Parser {
 
 						}
 						break;
+					case CONJ_OU:
+						{
+						alt29=1;
+						}
+						break;
+					case CONJ_ET:
+					case VAR:
+						{
+						alt29=1;
+						}
+						break;
+					case EOF:
 					case ANNEE:
 					case BULLETIN:
 					case BULLETIN_TABLE:
 					case DATE:
+					case EMAIL_MOT:
+					case EMAIL_TABLE:
 					case FICHIER:
 					case FICHIER_TABLE:
 					case JOUR:
@@ -2224,13 +2231,6 @@ public class tal_sqlParser extends Parser {
 					case NOMBRE:
 					case RUBRIQUE:
 					case RUBRIQUE_TABLE:
-					case VAR:
-						{
-						alt29=1;
-						}
-						break;
-					case CONJ_ET:
-					case CONJ_OU:
 						{
 						alt29=2;
 						}
@@ -2265,21 +2265,14 @@ public class tal_sqlParser extends Parser {
 			}
 			else if ( (LA29_0==VAR) ) {
 				switch ( input.LA(2) ) {
-				case EOF:
-				case EMAIL_MOT:
-				case EMAIL_TABLE:
-					{
-					alt29=1;
-					}
-					break;
 				case MOT:
 					{
-					int LA29_4 = input.LA(3);
-					if ( (LA29_4==VAR) ) {
+					int LA29_3 = input.LA(3);
+					if ( (LA29_3==CONJ_OU) ) {
 						alt29=1;
 					}
-					else if ( ((LA29_4 >= CONJ_ET && LA29_4 <= CONJ_OU)) ) {
-						alt29=2;
+					else if ( (LA29_3==CONJ_ET||LA29_3==VAR) ) {
+						alt29=1;
 					}
 
 					else {
@@ -2289,7 +2282,7 @@ public class tal_sqlParser extends Parser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 29, 4, input);
+								new NoViableAltException("", 29, 3, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -2298,10 +2291,24 @@ public class tal_sqlParser extends Parser {
 
 					}
 					break;
+				case CONJ_OU:
+					{
+					alt29=1;
+					}
+					break;
+				case CONJ_ET:
+				case VAR:
+					{
+					alt29=1;
+					}
+					break;
+				case EOF:
 				case ANNEE:
 				case BULLETIN:
 				case BULLETIN_TABLE:
 				case DATE:
+				case EMAIL_MOT:
+				case EMAIL_TABLE:
 				case FICHIER:
 				case FICHIER_TABLE:
 				case JOUR:
@@ -2309,13 +2316,6 @@ public class tal_sqlParser extends Parser {
 				case NOMBRE:
 				case RUBRIQUE:
 				case RUBRIQUE_TABLE:
-				case VAR:
-					{
-					alt29=1;
-					}
-					break;
-				case CONJ_ET:
-				case CONJ_OU:
 					{
 					alt29=2;
 					}
@@ -2341,10 +2341,10 @@ public class tal_sqlParser extends Parser {
 
 			switch (alt29) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:2: ( ( MOT )? a= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:2: ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:2: ( ( MOT )? a= VAR )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:3: ( MOT )? a= VAR
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:2: ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:3: ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param
 					{
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:560:3: ( MOT )?
 					int alt24=2;
@@ -2364,60 +2364,30 @@ public class tal_sqlParser extends Parser {
 
 					a=(Token)match(input,VAR,FOLLOW_VAR_in_params2179); 
 
-							arbre.ajouteFils(new Arbre(""," from public.titretexte where mot LIKE '%"+a.getText()+"%'"));
-						
-					}
-
-					}
-					break;
-				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:566:2: ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param )
-					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:566:2: ( ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:566:3: ( MOT )? a= VAR ( ( MOT )? p= param )* ( MOT )? p= param
-					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:566:3: ( MOT )?
-					int alt25=2;
-					int LA25_0 = input.LA(1);
-					if ( (LA25_0==MOT) ) {
-						alt25=1;
-					}
-					switch (alt25) {
-						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:566:3: MOT
-							{
-							match(input,MOT,FOLLOW_MOT_in_params2190); 
-							}
-							break;
-
-					}
-
-					a=(Token)match(input,VAR,FOLLOW_VAR_in_params2198); 
-
 							arbre.ajouteFils(new Arbre(""," from public.titretexte where {mot LIKE '%"+a.getText()+"%'"));
 						
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:571:2: ( ( MOT )? p= param )*
-					loop27:
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:565:2: ( ( MOT )? p= param )*
+					loop26:
 					while (true) {
-						int alt27=2;
+						int alt26=2;
 						switch ( input.LA(1) ) {
 						case MOT:
 							{
 							switch ( input.LA(2) ) {
 							case CONJ_OU:
 								{
-								int LA27_2 = input.LA(3);
-								if ( (LA27_2==VAR) ) {
-									int LA27_3 = input.LA(4);
-									if ( (LA27_3==MOT) ) {
-										int LA27_6 = input.LA(5);
-										if ( ((LA27_6 >= CONJ_ET && LA27_6 <= CONJ_OU)||LA27_6==VAR) ) {
-											alt27=1;
+								int LA26_2 = input.LA(3);
+								if ( (LA26_2==VAR) ) {
+									int LA26_3 = input.LA(4);
+									if ( (LA26_3==MOT) ) {
+										int LA26_6 = input.LA(5);
+										if ( ((LA26_6 >= CONJ_ET && LA26_6 <= CONJ_OU)||LA26_6==VAR) ) {
+											alt26=1;
 										}
 
 									}
-									else if ( ((LA27_3 >= CONJ_ET && LA27_3 <= CONJ_OU)||LA27_3==VAR) ) {
-										alt27=1;
+									else if ( ((LA26_3 >= CONJ_ET && LA26_3 <= CONJ_OU)||LA26_3==VAR) ) {
+										alt26=1;
 									}
 
 								}
@@ -2426,34 +2396,34 @@ public class tal_sqlParser extends Parser {
 								break;
 							case VAR:
 								{
-								int LA27_3 = input.LA(3);
-								if ( (LA27_3==MOT) ) {
-									int LA27_6 = input.LA(4);
-									if ( ((LA27_6 >= CONJ_ET && LA27_6 <= CONJ_OU)||LA27_6==VAR) ) {
-										alt27=1;
+								int LA26_3 = input.LA(3);
+								if ( (LA26_3==MOT) ) {
+									int LA26_6 = input.LA(4);
+									if ( ((LA26_6 >= CONJ_ET && LA26_6 <= CONJ_OU)||LA26_6==VAR) ) {
+										alt26=1;
 									}
 
 								}
-								else if ( ((LA27_3 >= CONJ_ET && LA27_3 <= CONJ_OU)||LA27_3==VAR) ) {
-									alt27=1;
+								else if ( ((LA26_3 >= CONJ_ET && LA26_3 <= CONJ_OU)||LA26_3==VAR) ) {
+									alt26=1;
 								}
 
 								}
 								break;
 							case CONJ_ET:
 								{
-								int LA27_4 = input.LA(3);
-								if ( (LA27_4==VAR) ) {
-									int LA27_8 = input.LA(4);
-									if ( (LA27_8==MOT) ) {
-										int LA27_6 = input.LA(5);
-										if ( ((LA27_6 >= CONJ_ET && LA27_6 <= CONJ_OU)||LA27_6==VAR) ) {
-											alt27=1;
+								int LA26_4 = input.LA(3);
+								if ( (LA26_4==VAR) ) {
+									int LA26_8 = input.LA(4);
+									if ( (LA26_8==MOT) ) {
+										int LA26_6 = input.LA(5);
+										if ( ((LA26_6 >= CONJ_ET && LA26_6 <= CONJ_OU)||LA26_6==VAR) ) {
+											alt26=1;
 										}
 
 									}
-									else if ( ((LA27_8 >= CONJ_ET && LA27_8 <= CONJ_OU)||LA27_8==VAR) ) {
-										alt27=1;
+									else if ( ((LA26_8 >= CONJ_ET && LA26_8 <= CONJ_OU)||LA26_8==VAR) ) {
+										alt26=1;
 									}
 
 								}
@@ -2465,18 +2435,18 @@ public class tal_sqlParser extends Parser {
 							break;
 						case CONJ_OU:
 							{
-							int LA27_2 = input.LA(2);
-							if ( (LA27_2==VAR) ) {
-								int LA27_3 = input.LA(3);
-								if ( (LA27_3==MOT) ) {
-									int LA27_6 = input.LA(4);
-									if ( ((LA27_6 >= CONJ_ET && LA27_6 <= CONJ_OU)||LA27_6==VAR) ) {
-										alt27=1;
+							int LA26_2 = input.LA(2);
+							if ( (LA26_2==VAR) ) {
+								int LA26_3 = input.LA(3);
+								if ( (LA26_3==MOT) ) {
+									int LA26_6 = input.LA(4);
+									if ( ((LA26_6 >= CONJ_ET && LA26_6 <= CONJ_OU)||LA26_6==VAR) ) {
+										alt26=1;
 									}
 
 								}
-								else if ( ((LA27_3 >= CONJ_ET && LA27_3 <= CONJ_OU)||LA27_3==VAR) ) {
-									alt27=1;
+								else if ( ((LA26_3 >= CONJ_ET && LA26_3 <= CONJ_OU)||LA26_3==VAR) ) {
+									alt26=1;
 								}
 
 							}
@@ -2485,34 +2455,34 @@ public class tal_sqlParser extends Parser {
 							break;
 						case VAR:
 							{
-							int LA27_3 = input.LA(2);
-							if ( (LA27_3==MOT) ) {
-								int LA27_6 = input.LA(3);
-								if ( ((LA27_6 >= CONJ_ET && LA27_6 <= CONJ_OU)||LA27_6==VAR) ) {
-									alt27=1;
+							int LA26_3 = input.LA(2);
+							if ( (LA26_3==MOT) ) {
+								int LA26_6 = input.LA(3);
+								if ( ((LA26_6 >= CONJ_ET && LA26_6 <= CONJ_OU)||LA26_6==VAR) ) {
+									alt26=1;
 								}
 
 							}
-							else if ( ((LA27_3 >= CONJ_ET && LA27_3 <= CONJ_OU)||LA27_3==VAR) ) {
-								alt27=1;
+							else if ( ((LA26_3 >= CONJ_ET && LA26_3 <= CONJ_OU)||LA26_3==VAR) ) {
+								alt26=1;
 							}
 
 							}
 							break;
 						case CONJ_ET:
 							{
-							int LA27_4 = input.LA(2);
-							if ( (LA27_4==VAR) ) {
-								int LA27_8 = input.LA(3);
-								if ( (LA27_8==MOT) ) {
-									int LA27_6 = input.LA(4);
-									if ( ((LA27_6 >= CONJ_ET && LA27_6 <= CONJ_OU)||LA27_6==VAR) ) {
-										alt27=1;
+							int LA26_4 = input.LA(2);
+							if ( (LA26_4==VAR) ) {
+								int LA26_8 = input.LA(3);
+								if ( (LA26_8==MOT) ) {
+									int LA26_6 = input.LA(4);
+									if ( ((LA26_6 >= CONJ_ET && LA26_6 <= CONJ_OU)||LA26_6==VAR) ) {
+										alt26=1;
 									}
 
 								}
-								else if ( ((LA27_8 >= CONJ_ET && LA27_8 <= CONJ_OU)||LA27_8==VAR) ) {
-									alt27=1;
+								else if ( ((LA26_8 >= CONJ_ET && LA26_8 <= CONJ_OU)||LA26_8==VAR) ) {
+									alt26=1;
 								}
 
 							}
@@ -2520,27 +2490,27 @@ public class tal_sqlParser extends Parser {
 							}
 							break;
 						}
-						switch (alt27) {
+						switch (alt26) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:571:3: ( MOT )? p= param
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:565:3: ( MOT )? p= param
 							{
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:571:3: ( MOT )?
-							int alt26=2;
-							int LA26_0 = input.LA(1);
-							if ( (LA26_0==MOT) ) {
-								alt26=1;
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:565:3: ( MOT )?
+							int alt25=2;
+							int LA25_0 = input.LA(1);
+							if ( (LA25_0==MOT) ) {
+								alt25=1;
 							}
-							switch (alt26) {
+							switch (alt25) {
 								case 1 :
-									// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:571:3: MOT
+									// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:565:3: MOT
 									{
-									match(input,MOT,FOLLOW_MOT_in_params2205); 
+									match(input,MOT,FOLLOW_MOT_in_params2186); 
 									}
 									break;
 
 							}
 
-							pushFollow(FOLLOW_param_in_params2212);
+							pushFollow(FOLLOW_param_in_params2193);
 							p=param();
 							state._fsp--;
 
@@ -2552,27 +2522,27 @@ public class tal_sqlParser extends Parser {
 							break;
 
 						default :
-							break loop27;
+							break loop26;
 						}
 					}
 
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:576:2: ( MOT )?
-					int alt28=2;
-					int LA28_0 = input.LA(1);
-					if ( (LA28_0==MOT) ) {
-						alt28=1;
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:570:2: ( MOT )?
+					int alt27=2;
+					int LA27_0 = input.LA(1);
+					if ( (LA27_0==MOT) ) {
+						alt27=1;
 					}
-					switch (alt28) {
+					switch (alt27) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:576:2: MOT
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:570:2: MOT
 							{
-							match(input,MOT,FOLLOW_MOT_in_params2220); 
+							match(input,MOT,FOLLOW_MOT_in_params2201); 
 							}
 							break;
 
 					}
 
-					pushFollow(FOLLOW_param_in_params2227);
+					pushFollow(FOLLOW_param_in_params2208);
 					p=param();
 					state._fsp--;
 
@@ -2580,6 +2550,36 @@ public class tal_sqlParser extends Parser {
 							pm_arbre = p;
 							arbre.ajouteFils(pm_arbre);
 							arbre.ajouteFils(new Arbre("", "}"));
+						
+					}
+
+					}
+					break;
+				case 2 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:577:2: ( ( MOT )? a= VAR )
+					{
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:577:2: ( ( MOT )? a= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:577:3: ( MOT )? a= VAR
+					{
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:577:3: ( MOT )?
+					int alt28=2;
+					int LA28_0 = input.LA(1);
+					if ( (LA28_0==MOT) ) {
+						alt28=1;
+					}
+					switch (alt28) {
+						case 1 :
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:577:3: MOT
+							{
+							match(input,MOT,FOLLOW_MOT_in_params2219); 
+							}
+							break;
+
+					}
+
+					a=(Token)match(input,VAR,FOLLOW_VAR_in_params2227); 
+
+							arbre.ajouteFils(new Arbre(""," from public.titretexte where mot LIKE '%"+a.getText()+"%'"));
 						
 					}
 
@@ -2602,7 +2602,7 @@ public class tal_sqlParser extends Parser {
 
 
 	// $ANTLR start "param"
-	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:585:1: param returns [Arbre p_arbre = new Arbre(\"\")] : ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) );
+	// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:1: param returns [Arbre p_arbre = new Arbre(\"\")] : ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) );
 	public final Arbre param() throws RecognitionException {
 		Arbre p_arbre =  new Arbre("");
 
@@ -2611,7 +2611,7 @@ public class tal_sqlParser extends Parser {
 		Token b=null;
 
 		try {
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:585:46: ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:46: ( ( ( CONJ_OU )? c= VAR ) | ( CONJ_ET b= VAR ) )
 			int alt31=2;
 			int LA31_0 = input.LA(1);
 			if ( (LA31_0==CONJ_OU||LA31_0==VAR) ) {
@@ -2629,12 +2629,12 @@ public class tal_sqlParser extends Parser {
 
 			switch (alt31) {
 				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:2: ( ( CONJ_OU )? c= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:587:2: ( ( CONJ_OU )? c= VAR )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:2: ( ( CONJ_OU )? c= VAR )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:3: ( CONJ_OU )? c= VAR
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:587:2: ( ( CONJ_OU )? c= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:587:3: ( CONJ_OU )? c= VAR
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:3: ( CONJ_OU )?
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:587:3: ( CONJ_OU )?
 					int alt30=2;
 					int LA30_0 = input.LA(1);
 					if ( (LA30_0==CONJ_OU) ) {
@@ -2642,15 +2642,15 @@ public class tal_sqlParser extends Parser {
 					}
 					switch (alt30) {
 						case 1 :
-							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:586:3: CONJ_OU
+							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:587:3: CONJ_OU
 							{
-							match(input,CONJ_OU,FOLLOW_CONJ_OU_in_param2246); 
+							match(input,CONJ_OU,FOLLOW_CONJ_OU_in_param2248); 
 							}
 							break;
 
 					}
 
-					c=(Token)match(input,VAR,FOLLOW_VAR_in_param2252); 
+					c=(Token)match(input,VAR,FOLLOW_VAR_in_param2254); 
 
 							p_arbre.ajouteFils(new Arbre(""," OR mot LIKE '%"+c.getText()+"%'"));
 						
@@ -2659,13 +2659,13 @@ public class tal_sqlParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:590:2: ( CONJ_ET b= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:591:2: ( CONJ_ET b= VAR )
 					{
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:590:2: ( CONJ_ET b= VAR )
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:590:3: CONJ_ET b= VAR
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:591:2: ( CONJ_ET b= VAR )
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:591:3: CONJ_ET b= VAR
 					{
-					match(input,CONJ_ET,FOLLOW_CONJ_ET_in_param2262); 
-					b=(Token)match(input,VAR,FOLLOW_VAR_in_param2268); 
+					match(input,CONJ_ET,FOLLOW_CONJ_ET_in_param2264); 
+					b=(Token)match(input,VAR,FOLLOW_VAR_in_param2270); 
 
 							p_arbre.ajouteFils(new Arbre(""," AND (mot LIKE '%"+b.getText()+"%')"));
 						
@@ -3132,15 +3132,15 @@ public class tal_sqlParser extends Parser {
 	public static final BitSet FOLLOW_NOMBRE_in_date2121 = new BitSet(new long[]{0x0000000004020002L});
 	public static final BitSet FOLLOW_params_in_date2145 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_MOT_in_params2171 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_params2179 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MOT_in_params2190 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_params2198 = new BitSet(new long[]{0x0000000004020180L});
-	public static final BitSet FOLLOW_MOT_in_params2205 = new BitSet(new long[]{0x0000000004000180L});
-	public static final BitSet FOLLOW_param_in_params2212 = new BitSet(new long[]{0x0000000004020180L});
-	public static final BitSet FOLLOW_MOT_in_params2220 = new BitSet(new long[]{0x0000000004000180L});
-	public static final BitSet FOLLOW_param_in_params2227 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONJ_OU_in_param2246 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_param2252 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_CONJ_ET_in_param2262 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_VAR_in_param2268 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_VAR_in_params2179 = new BitSet(new long[]{0x0000000004020180L});
+	public static final BitSet FOLLOW_MOT_in_params2186 = new BitSet(new long[]{0x0000000004000180L});
+	public static final BitSet FOLLOW_param_in_params2193 = new BitSet(new long[]{0x0000000004020180L});
+	public static final BitSet FOLLOW_MOT_in_params2201 = new BitSet(new long[]{0x0000000004000180L});
+	public static final BitSet FOLLOW_param_in_params2208 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_MOT_in_params2219 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_params2227 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONJ_OU_in_param2248 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_param2254 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_CONJ_ET_in_param2264 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_VAR_in_param2270 = new BitSet(new long[]{0x0000000000000002L});
 }
