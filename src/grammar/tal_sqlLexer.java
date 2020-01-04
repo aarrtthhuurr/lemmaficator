@@ -1,4 +1,4 @@
-// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-03 17:59:49
+// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-04 13:56:17
 
 package grammar;
 
@@ -282,13 +282,39 @@ public class tal_sqlLexer extends Lexer {
 		try {
 			int _type = EMAIL_TABLE;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:16:13: ( 'emails' )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:16:15: 'emails'
-			{
-			match("emails"); 
-
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:16:13: ( 'emails' | 'auteurs' )
+			int alt5=2;
+			int LA5_0 = input.LA(1);
+			if ( (LA5_0=='e') ) {
+				alt5=1;
+			}
+			else if ( (LA5_0=='a') ) {
+				alt5=2;
 			}
 
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 5, 0, input);
+				throw nvae;
+			}
+
+			switch (alt5) {
+				case 1 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:16:15: 'emails'
+					{
+					match("emails"); 
+
+					}
+					break;
+				case 2 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:16:26: 'auteurs'
+					{
+					match("auteurs"); 
+
+					}
+					break;
+
+			}
 			state.type = _type;
 			state.channel = _channel;
 		}
@@ -303,13 +329,39 @@ public class tal_sqlLexer extends Lexer {
 		try {
 			int _type = EMAIL_MOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:18:11: ( 'email' )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:18:13: 'email'
-			{
-			match("email"); 
-
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:18:11: ( 'email' | 'auteur' )
+			int alt6=2;
+			int LA6_0 = input.LA(1);
+			if ( (LA6_0=='e') ) {
+				alt6=1;
+			}
+			else if ( (LA6_0=='a') ) {
+				alt6=2;
 			}
 
+			else {
+				NoViableAltException nvae =
+					new NoViableAltException("", 6, 0, input);
+				throw nvae;
+			}
+
+			switch (alt6) {
+				case 1 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:18:13: 'email'
+					{
+					match("email"); 
+
+					}
+					break;
+				case 2 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:18:23: 'auteur'
+					{
+					match("auteur"); 
+
+					}
+					break;
+
+			}
 			state.type = _type;
 			state.channel = _channel;
 		}
@@ -336,15 +388,15 @@ public class tal_sqlLexer extends Lexer {
 				throw mse;
 			}
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:20:19: ( '0' .. '9' )*
-			loop5:
+			loop7:
 			while (true) {
-				int alt5=2;
-				int LA5_0 = input.LA(1);
-				if ( ((LA5_0 >= '0' && LA5_0 <= '9')) ) {
-					alt5=1;
+				int alt7=2;
+				int LA7_0 = input.LA(1);
+				if ( ((LA7_0 >= '0' && LA7_0 <= '9')) ) {
+					alt7=1;
 				}
 
-				switch (alt5) {
+				switch (alt7) {
 				case 1 :
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:
 					{
@@ -360,7 +412,7 @@ public class tal_sqlLexer extends Lexer {
 					break;
 
 				default :
-					break loop5;
+					break loop7;
 				}
 			}
 
@@ -590,29 +642,29 @@ public class tal_sqlLexer extends Lexer {
 			int _type = MOT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:43:5: ( 'mot' | 'contenir' | 'parler' )
-			int alt6=3;
+			int alt8=3;
 			switch ( input.LA(1) ) {
 			case 'm':
 				{
-				alt6=1;
+				alt8=1;
 				}
 				break;
 			case 'c':
 				{
-				alt6=2;
+				alt8=2;
 				}
 				break;
 			case 'p':
 				{
-				alt6=3;
+				alt8=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 6, 0, input);
+					new NoViableAltException("", 8, 0, input);
 				throw nvae;
 			}
-			switch (alt6) {
+			switch (alt8) {
 				case 1 :
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:43:7: 'mot'
 					{
@@ -651,64 +703,64 @@ public class tal_sqlLexer extends Lexer {
 			int _type = WS;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:46:5: ( ( ' ' | '\\t' | '\\r' | 'je' | 'qui' | 'dont' ) | '\\n' )
-			int alt8=2;
-			int LA8_0 = input.LA(1);
-			if ( (LA8_0=='\t'||LA8_0=='\r'||LA8_0==' '||LA8_0=='d'||LA8_0=='j'||LA8_0=='q') ) {
-				alt8=1;
+			int alt10=2;
+			int LA10_0 = input.LA(1);
+			if ( (LA10_0=='\t'||LA10_0=='\r'||LA10_0==' '||LA10_0=='d'||LA10_0=='j'||LA10_0=='q') ) {
+				alt10=1;
 			}
-			else if ( (LA8_0=='\n') ) {
-				alt8=2;
+			else if ( (LA10_0=='\n') ) {
+				alt10=2;
 			}
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 8, 0, input);
+					new NoViableAltException("", 10, 0, input);
 				throw nvae;
 			}
 
-			switch (alt8) {
+			switch (alt10) {
 				case 1 :
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:46:7: ( ' ' | '\\t' | '\\r' | 'je' | 'qui' | 'dont' )
 					{
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:46:7: ( ' ' | '\\t' | '\\r' | 'je' | 'qui' | 'dont' )
-					int alt7=6;
+					int alt9=6;
 					switch ( input.LA(1) ) {
 					case ' ':
 						{
-						alt7=1;
+						alt9=1;
 						}
 						break;
 					case '\t':
 						{
-						alt7=2;
+						alt9=2;
 						}
 						break;
 					case '\r':
 						{
-						alt7=3;
+						alt9=3;
 						}
 						break;
 					case 'j':
 						{
-						alt7=4;
+						alt9=4;
 						}
 						break;
 					case 'q':
 						{
-						alt7=5;
+						alt9=5;
 						}
 						break;
 					case 'd':
 						{
-						alt7=6;
+						alt9=6;
 						}
 						break;
 					default:
 						NoViableAltException nvae =
-							new NoViableAltException("", 7, 0, input);
+							new NoViableAltException("", 9, 0, input);
 						throw nvae;
 					}
-					switch (alt7) {
+					switch (alt9) {
 						case 1 :
 							// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:46:8: ' '
 							{
@@ -788,118 +840,6 @@ public class tal_sqlLexer extends Lexer {
 				throw mse;
 			}
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:49:18: ( 'a' .. 'z' )+
-			int cnt9=0;
-			loop9:
-			while (true) {
-				int alt9=2;
-				int LA9_0 = input.LA(1);
-				if ( ((LA9_0 >= 'a' && LA9_0 <= 'z')) ) {
-					alt9=1;
-				}
-
-				switch (alt9) {
-				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:
-					{
-					if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-						input.consume();
-					}
-					else {
-						MismatchedSetException mse = new MismatchedSetException(null,input);
-						recover(mse);
-						throw mse;
-					}
-					}
-					break;
-
-				default :
-					if ( cnt9 >= 1 ) break loop9;
-					EarlyExitException eee = new EarlyExitException(9, input);
-					throw eee;
-				}
-				cnt9++;
-			}
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "NOM"
-
-	// $ANTLR start "VAR"
-	public final void mVAR() throws RecognitionException {
-		try {
-			int _type = VAR;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:51:5: ( ( 'a' .. 'z' ) ( 'a' .. 'z' )+ )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:51:7: ( 'a' .. 'z' ) ( 'a' .. 'z' )+
-			{
-			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-				input.consume();
-			}
-			else {
-				MismatchedSetException mse = new MismatchedSetException(null,input);
-				recover(mse);
-				throw mse;
-			}
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:51:18: ( 'a' .. 'z' )+
-			int cnt10=0;
-			loop10:
-			while (true) {
-				int alt10=2;
-				int LA10_0 = input.LA(1);
-				if ( ((LA10_0 >= 'a' && LA10_0 <= 'z')) ) {
-					alt10=1;
-				}
-
-				switch (alt10) {
-				case 1 :
-					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:
-					{
-					if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
-						input.consume();
-					}
-					else {
-						MismatchedSetException mse = new MismatchedSetException(null,input);
-						recover(mse);
-						throw mse;
-					}
-					}
-					break;
-
-				default :
-					if ( cnt10 >= 1 ) break loop10;
-					EarlyExitException eee = new EarlyExitException(10, input);
-					throw eee;
-				}
-				cnt10++;
-			}
-
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "VAR"
-
-	// $ANTLR start "EMAIL"
-	public final void mEMAIL() throws RecognitionException {
-		try {
-			int _type = EMAIL;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:7: ( ( 'a' .. 'z' )+ '@' ( 'a' .. 'z' )+ '.' ( 'a' .. 'z' ) ( 'a' .. 'z' ) ( 'a' .. 'z' )? )
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:9: ( 'a' .. 'z' )+ '@' ( 'a' .. 'z' )+ '.' ( 'a' .. 'z' ) ( 'a' .. 'z' ) ( 'a' .. 'z' )?
-			{
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:9: ( 'a' .. 'z' )+
 			int cnt11=0;
 			loop11:
 			while (true) {
@@ -932,8 +872,34 @@ public class tal_sqlLexer extends Lexer {
 				cnt11++;
 			}
 
-			match('@'); 
-			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:23: ( 'a' .. 'z' )+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "NOM"
+
+	// $ANTLR start "VAR"
+	public final void mVAR() throws RecognitionException {
+		try {
+			int _type = VAR;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:51:5: ( ( 'a' .. 'z' ) ( 'a' .. 'z' )+ )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:51:7: ( 'a' .. 'z' ) ( 'a' .. 'z' )+
+			{
+			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+				input.consume();
+			}
+			else {
+				MismatchedSetException mse = new MismatchedSetException(null,input);
+				recover(mse);
+				throw mse;
+			}
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:51:18: ( 'a' .. 'z' )+
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -966,6 +932,92 @@ public class tal_sqlLexer extends Lexer {
 				cnt12++;
 			}
 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "VAR"
+
+	// $ANTLR start "EMAIL"
+	public final void mEMAIL() throws RecognitionException {
+		try {
+			int _type = EMAIL;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:7: ( ( 'a' .. 'z' )+ '@' ( 'a' .. 'z' )+ '.' ( 'a' .. 'z' ) ( 'a' .. 'z' ) ( 'a' .. 'z' )? )
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:9: ( 'a' .. 'z' )+ '@' ( 'a' .. 'z' )+ '.' ( 'a' .. 'z' ) ( 'a' .. 'z' ) ( 'a' .. 'z' )?
+			{
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:9: ( 'a' .. 'z' )+
+			int cnt13=0;
+			loop13:
+			while (true) {
+				int alt13=2;
+				int LA13_0 = input.LA(1);
+				if ( ((LA13_0 >= 'a' && LA13_0 <= 'z')) ) {
+					alt13=1;
+				}
+
+				switch (alt13) {
+				case 1 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:
+					{
+					if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+						input.consume();
+					}
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
+					}
+					break;
+
+				default :
+					if ( cnt13 >= 1 ) break loop13;
+					EarlyExitException eee = new EarlyExitException(13, input);
+					throw eee;
+				}
+				cnt13++;
+			}
+
+			match('@'); 
+			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:23: ( 'a' .. 'z' )+
+			int cnt14=0;
+			loop14:
+			while (true) {
+				int alt14=2;
+				int LA14_0 = input.LA(1);
+				if ( ((LA14_0 >= 'a' && LA14_0 <= 'z')) ) {
+					alt14=1;
+				}
+
+				switch (alt14) {
+				case 1 :
+					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:
+					{
+					if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
+						input.consume();
+					}
+					else {
+						MismatchedSetException mse = new MismatchedSetException(null,input);
+						recover(mse);
+						throw mse;
+					}
+					}
+					break;
+
+				default :
+					if ( cnt14 >= 1 ) break loop14;
+					EarlyExitException eee = new EarlyExitException(14, input);
+					throw eee;
+				}
+				cnt14++;
+			}
+
 			match('.'); 
 			if ( (input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -984,12 +1036,12 @@ public class tal_sqlLexer extends Lexer {
 				throw mse;
 			}
 			// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:54:57: ( 'a' .. 'z' )?
-			int alt13=2;
-			int LA13_0 = input.LA(1);
-			if ( ((LA13_0 >= 'a' && LA13_0 <= 'z')) ) {
-				alt13=1;
+			int alt15=2;
+			int LA15_0 = input.LA(1);
+			if ( ((LA15_0 >= 'a' && LA15_0 <= 'z')) ) {
+				alt15=1;
 			}
-			switch (alt13) {
+			switch (alt15) {
 				case 1 :
 					// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:
 					{
@@ -1020,9 +1072,9 @@ public class tal_sqlLexer extends Lexer {
 	@Override
 	public void mTokens() throws RecognitionException {
 		// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:1:8: ( SELECT | SELECT_COUNT | FICHIER | FICHIER_TABLE | BULLETIN | BULLETIN_TABLE | EMAIL_TABLE | EMAIL_MOT | NOMBRE | DATE | MOIS | ANNEE | JOUR | TITRE | RUBRIQUE | RUBRIQUE_TABLE | CONJ_ET | CONJ_OU | POINT | MOT | WS | NOM | VAR | EMAIL )
-		int alt14=24;
-		alt14 = dfa14.predict(input);
-		switch (alt14) {
+		int alt16=24;
+		alt16 = dfa16.predict(input);
+		switch (alt16) {
 			case 1 :
 				// /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g:1:10: SELECT
 				{
@@ -1196,163 +1248,169 @@ public class tal_sqlLexer extends Lexer {
 	}
 
 
-	protected DFA14 dfa14 = new DFA14(this);
-	static final String DFA14_eotS =
-		"\25\uffff\2\53\1\uffff\7\53\1\64\4\53\1\21\2\53\1\74\3\53\1\uffff\10\53"+
-		"\1\uffff\3\53\1\113\3\53\1\uffff\1\53\1\21\11\53\1\131\1\21\1\132\1\uffff"+
-		"\1\133\10\53\1\144\2\53\1\150\3\uffff\1\151\7\53\1\uffff\1\53\1\163\1"+
-		"\164\2\uffff\1\53\1\113\1\166\1\167\1\53\2\172\1\53\1\175\2\uffff\1\53"+
-		"\2\uffff\1\113\1\177\1\uffff\1\177\1\163\1\uffff\1\u0082\1\uffff\1\175"+
-		"\1\u0083\2\uffff";
-	static final String DFA14_eofS =
-		"\u0084\uffff";
-	static final String DFA14_minS =
+	protected DFA16 dfa16 = new DFA16(this);
+	static final String DFA16_eotS =
+		"\25\uffff\2\54\1\uffff\10\54\1\66\4\54\1\21\2\54\1\76\3\54\1\uffff\11"+
+		"\54\1\uffff\3\54\1\116\3\54\1\uffff\1\54\1\21\12\54\1\135\1\21\1\136\1"+
+		"\uffff\1\137\11\54\1\151\2\54\1\155\3\uffff\1\156\7\54\1\155\1\uffff\1"+
+		"\54\1\171\1\172\2\uffff\1\54\1\116\1\174\1\175\1\54\2\u0080\1\172\1\54"+
+		"\1\u0083\2\uffff\1\54\2\uffff\1\116\1\u0085\1\uffff\1\u0085\1\171\1\uffff"+
+		"\1\u0088\1\uffff\1\u0083\1\u0089\2\uffff";
+	static final String DFA16_eofS =
+		"\u008a\uffff";
+	static final String DFA16_minS =
 		"\1\11\7\100\1\uffff\6\100\1\uffff\1\100\1\uffff\1\100\1\uffff\3\100\1"+
-		"\uffff\23\100\1\uffff\10\100\1\uffff\7\100\1\uffff\16\100\1\uffff\15\100"+
-		"\3\uffff\10\100\1\uffff\3\100\2\uffff\11\100\2\uffff\1\100\2\uffff\2\100"+
+		"\uffff\24\100\1\uffff\11\100\1\uffff\7\100\1\uffff\17\100\1\uffff\16\100"+
+		"\3\uffff\11\100\1\uffff\3\100\2\uffff\12\100\2\uffff\1\100\2\uffff\2\100"+
 		"\1\uffff\2\100\1\uffff\1\100\1\uffff\2\100\2\uffff";
-	static final String DFA14_maxS =
+	static final String DFA16_maxS =
 		"\10\172\1\uffff\6\172\1\uffff\1\172\1\uffff\1\172\1\uffff\3\172\1\uffff"+
-		"\23\172\1\uffff\10\172\1\uffff\7\172\1\uffff\16\172\1\uffff\15\172\3\uffff"+
-		"\10\172\1\uffff\3\172\2\uffff\11\172\2\uffff\1\172\2\uffff\2\172\1\uffff"+
+		"\24\172\1\uffff\11\172\1\uffff\7\172\1\uffff\17\172\1\uffff\16\172\3\uffff"+
+		"\11\172\1\uffff\3\172\2\uffff\12\172\2\uffff\1\172\2\uffff\2\172\1\uffff"+
 		"\2\172\1\uffff\1\172\1\uffff\2\172\2\uffff";
-	static final String DFA14_acceptS =
-		"\10\uffff\1\11\6\uffff\1\23\1\uffff\1\25\1\uffff\1\26\3\uffff\1\30\23"+
-		"\uffff\1\27\10\uffff\1\21\7\uffff\1\22\16\uffff\1\24\15\uffff\1\12\1\13"+
-		"\1\15\10\uffff\1\14\3\uffff\1\10\1\16\11\uffff\1\5\1\7\1\uffff\1\1\1\2"+
+	static final String DFA16_acceptS =
+		"\10\uffff\1\11\6\uffff\1\23\1\uffff\1\25\1\uffff\1\26\3\uffff\1\30\24"+
+		"\uffff\1\27\11\uffff\1\21\7\uffff\1\22\17\uffff\1\24\16\uffff\1\12\1\13"+
+		"\1\15\11\uffff\1\14\3\uffff\1\10\1\16\12\uffff\1\5\1\7\1\uffff\1\1\1\2"+
 		"\2\uffff\1\3\2\uffff\1\6\1\uffff\1\4\2\uffff\1\17\1\20";
-	static final String DFA14_specialS =
-		"\u0084\uffff}>";
-	static final String[] DFA14_transitionS = {
+	static final String DFA16_specialS =
+		"\u008a\uffff}>";
+	static final String[] DFA16_transitionS = {
 			"\2\21\2\uffff\1\21\22\uffff\1\21\15\uffff\1\17\1\uffff\12\10\7\uffff"+
 			"\32\23\6\uffff\1\4\1\5\1\2\1\11\1\7\1\3\3\24\1\13\2\24\1\12\1\6\1\16"+
 			"\1\20\1\22\1\15\1\24\1\14\1\24\1\1\4\24",
 			"\1\27\40\uffff\16\26\1\25\13\26",
 			"\1\27\40\uffff\16\26\1\30\13\26",
 			"\1\27\40\uffff\10\26\1\31\21\26",
-			"\1\27\40\uffff\15\26\1\33\3\26\1\32\10\26",
-			"\1\27\40\uffff\24\26\1\34\5\26",
+			"\1\27\40\uffff\15\26\1\34\3\26\1\32\2\26\1\33\5\26",
 			"\1\27\40\uffff\24\26\1\35\5\26",
-			"\1\27\40\uffff\14\26\1\36\6\26\1\37\6\26",
+			"\1\27\40\uffff\24\26\1\36\5\26",
+			"\1\27\40\uffff\14\26\1\37\6\26\1\40\6\26",
 			"",
-			"\1\27\40\uffff\1\40\15\26\1\41\13\26",
-			"\1\27\40\uffff\16\26\1\42\13\26",
-			"\1\27\40\uffff\4\26\1\44\11\26\1\43\13\26",
-			"\1\27\40\uffff\10\26\1\45\21\26",
-			"\1\27\40\uffff\24\26\1\46\5\26",
+			"\1\27\40\uffff\1\41\15\26\1\42\13\26",
+			"\1\27\40\uffff\16\26\1\43\13\26",
+			"\1\27\40\uffff\4\26\1\45\11\26\1\44\13\26",
+			"\1\27\40\uffff\10\26\1\46\21\26",
 			"\1\27\40\uffff\24\26\1\47\5\26",
+			"\1\27\40\uffff\24\26\1\50\5\26",
 			"",
-			"\1\27\40\uffff\1\50\31\26",
+			"\1\27\40\uffff\1\51\31\26",
 			"",
-			"\1\27\40\uffff\24\26\1\51\5\26",
-			"",
-			"\1\27\40\uffff\32\26",
 			"\1\27\40\uffff\24\26\1\52\5\26",
+			"",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\24\26\1\53\5\26",
 			"\1\27\40\uffff\32\26",
 			"",
-			"\1\27\40\uffff\14\26\1\54\1\55\14\26",
-			"\1\27\40\uffff\2\26\1\56\27\26",
-			"\1\27\40\uffff\23\26\1\57\6\26",
-			"\1\27\40\uffff\15\26\1\60\14\26",
-			"\1\27\40\uffff\13\26\1\61\16\26",
-			"\1\27\40\uffff\14\26\1\62\15\26",
-			"\1\27\40\uffff\1\63\31\26",
+			"\1\27\40\uffff\14\26\1\55\1\56\14\26",
+			"\1\27\40\uffff\2\26\1\57\27\26",
+			"\1\27\40\uffff\23\26\1\60\6\26",
+			"\1\27\40\uffff\23\26\1\61\6\26",
+			"\1\27\40\uffff\15\26\1\62\14\26",
+			"\1\27\40\uffff\13\26\1\63\16\26",
+			"\1\27\40\uffff\14\26\1\64\15\26",
+			"\1\27\40\uffff\1\65\31\26",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\23\26\1\65\6\26",
-			"\1\27\40\uffff\15\26\1\66\14\26",
-			"\1\27\40\uffff\10\26\1\67\12\26\1\70\6\26",
-			"\1\27\40\uffff\24\26\1\71\5\26",
+			"\1\27\40\uffff\23\26\1\67\6\26",
+			"\1\27\40\uffff\15\26\1\70\14\26",
+			"\1\27\40\uffff\10\26\1\71\12\26\1\72\6\26",
+			"\1\27\40\uffff\24\26\1\73\5\26",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\23\26\1\72\6\26",
-			"\1\27\40\uffff\1\26\1\73\30\26",
+			"\1\27\40\uffff\23\26\1\74\6\26",
+			"\1\27\40\uffff\1\26\1\75\30\26",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\21\26\1\75\10\26",
-			"\1\27\40\uffff\10\26\1\76\21\26",
-			"\1\27\40\uffff\13\26\1\77\16\26",
+			"\1\27\40\uffff\21\26\1\77\10\26",
+			"\1\27\40\uffff\10\26\1\100\21\26",
+			"\1\27\40\uffff\13\26\1\101\16\26",
 			"",
-			"\1\27\40\uffff\1\26\1\100\30\26",
-			"\1\27\40\uffff\23\26\1\101\6\26",
-			"\1\27\40\uffff\7\26\1\102\22\26",
-			"\1\27\40\uffff\10\26\1\103\21\26",
-			"\1\27\40\uffff\4\26\1\104\25\26",
-			"\1\27\40\uffff\13\26\1\105\16\26",
+			"\1\27\40\uffff\1\26\1\102\30\26",
+			"\1\27\40\uffff\23\26\1\103\6\26",
+			"\1\27\40\uffff\7\26\1\104\22\26",
+			"\1\27\40\uffff\10\26\1\105\21\26",
 			"\1\27\40\uffff\4\26\1\106\25\26",
-			"\1\27\40\uffff\10\26\1\107\21\26",
+			"\1\27\40\uffff\4\26\1\107\25\26",
+			"\1\27\40\uffff\13\26\1\110\16\26",
+			"\1\27\40\uffff\4\26\1\111\25\26",
+			"\1\27\40\uffff\10\26\1\112\21\26",
 			"",
-			"\1\27\40\uffff\4\26\1\110\25\26",
-			"\1\27\40\uffff\23\26\1\111\6\26",
-			"\1\27\40\uffff\22\26\1\112\7\26",
+			"\1\27\40\uffff\4\26\1\113\25\26",
+			"\1\27\40\uffff\23\26\1\114\6\26",
+			"\1\27\40\uffff\22\26\1\115\7\26",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\21\26\1\114\10\26",
-			"\1\27\40\uffff\21\26\1\115\10\26",
-			"\1\27\40\uffff\21\26\1\116\10\26",
+			"\1\27\40\uffff\21\26\1\117\10\26",
+			"\1\27\40\uffff\21\26\1\120\10\26",
+			"\1\27\40\uffff\21\26\1\121\10\26",
 			"",
-			"\1\27\40\uffff\13\26\1\117\16\26",
+			"\1\27\40\uffff\13\26\1\122\16\26",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\16\26\1\120\13\26",
-			"\1\27\40\uffff\10\26\1\121\21\26",
-			"\1\27\40\uffff\4\26\1\122\25\26",
-			"\1\27\40\uffff\10\26\1\123\21\26",
-			"\1\27\40\uffff\2\26\1\124\27\26",
+			"\1\27\40\uffff\16\26\1\123\13\26",
+			"\1\27\40\uffff\10\26\1\124\21\26",
 			"\1\27\40\uffff\4\26\1\125\25\26",
-			"\1\27\40\uffff\4\26\1\126\25\26",
-			"\1\27\40\uffff\21\26\1\127\10\26",
-			"\1\27\40\uffff\13\26\1\130\16\26",
+			"\1\27\40\uffff\10\26\1\126\21\26",
+			"\1\27\40\uffff\2\26\1\127\27\26",
+			"\1\27\40\uffff\24\26\1\130\5\26",
+			"\1\27\40\uffff\4\26\1\131\25\26",
+			"\1\27\40\uffff\4\26\1\132\25\26",
+			"\1\27\40\uffff\21\26\1\133\10\26",
+			"\1\27\40\uffff\13\26\1\134\16\26",
 			"\1\27\40\uffff\32\26",
 			"\1\27\40\uffff\32\26",
 			"\1\27\40\uffff\32\26",
 			"",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\4\26\1\134\25\26",
-			"\1\27\40\uffff\10\26\1\135\21\26",
-			"\1\27\40\uffff\4\26\1\136\25\26",
-			"\1\27\40\uffff\10\26\1\137\21\26",
 			"\1\27\40\uffff\4\26\1\140\25\26",
-			"\1\27\40\uffff\15\26\1\141\14\26",
+			"\1\27\40\uffff\10\26\1\141\21\26",
 			"\1\27\40\uffff\4\26\1\142\25\26",
-			"\1\27\40\uffff\13\26\1\143\16\26",
+			"\1\27\40\uffff\10\26\1\143\21\26",
+			"\1\27\40\uffff\4\26\1\144\25\26",
+			"\1\27\40\uffff\15\26\1\145\14\26",
+			"\1\27\40\uffff\4\26\1\146\25\26",
+			"\1\27\40\uffff\13\26\1\147\16\26",
+			"\1\27\40\uffff\21\26\1\150\10\26",
 			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\23\26\1\145\6\26",
-			"\1\27\40\uffff\16\26\1\146\13\26",
-			"\1\27\40\uffff\22\26\1\147\7\26",
+			"\1\27\40\uffff\23\26\1\152\6\26",
+			"\1\27\40\uffff\16\26\1\153\13\26",
+			"\1\27\40\uffff\22\26\1\154\7\26",
 			"",
-			"",
-			"",
-			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\20\26\1\152\11\26",
-			"\1\27\40\uffff\21\26\1\153\10\26",
-			"\1\27\40\uffff\21\26\1\154\10\26",
-			"\1\27\40\uffff\15\26\1\155\14\26",
-			"\1\27\40\uffff\10\26\1\156\21\26",
-			"\1\27\40\uffff\21\26\1\157\10\26",
-			"\1\27\40\uffff\4\26\1\160\25\26",
-			"",
-			"\1\27\40\uffff\10\26\1\161\21\26",
-			"\1\27\40\uffff\22\26\1\162\7\26",
-			"\1\27\40\uffff\32\26",
-			"",
-			"",
-			"\1\27\40\uffff\24\26\1\165\5\26",
-			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\21\26\1\170\10\26",
-			"\1\27\40\uffff\22\26\1\171\7\26",
-			"\1\27\40\uffff\22\26\1\173\7\26",
-			"\1\27\40\uffff\15\26\1\174\14\26",
-			"\1\27\40\uffff\32\26",
-			"",
-			"",
-			"\1\27\40\uffff\4\26\1\176\25\26",
 			"",
 			"",
 			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\20\26\1\157\11\26",
+			"\1\27\40\uffff\21\26\1\160\10\26",
+			"\1\27\40\uffff\21\26\1\161\10\26",
+			"\1\27\40\uffff\15\26\1\162\14\26",
+			"\1\27\40\uffff\10\26\1\163\21\26",
+			"\1\27\40\uffff\21\26\1\164\10\26",
+			"\1\27\40\uffff\4\26\1\165\25\26",
+			"\1\27\40\uffff\22\26\1\166\7\26",
+			"",
+			"\1\27\40\uffff\10\26\1\167\21\26",
+			"\1\27\40\uffff\22\26\1\170\7\26",
 			"\1\27\40\uffff\32\26",
 			"",
-			"\1\27\40\uffff\32\26",
-			"\1\27\40\uffff\22\26\1\u0080\7\26",
 			"",
+			"\1\27\40\uffff\24\26\1\173\5\26",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\21\26\1\176\10\26",
+			"\1\27\40\uffff\22\26\1\177\7\26",
 			"\1\27\40\uffff\22\26\1\u0081\7\26",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\15\26\1\u0082\14\26",
+			"\1\27\40\uffff\32\26",
+			"",
+			"",
+			"\1\27\40\uffff\4\26\1\u0084\25\26",
+			"",
+			"",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\32\26",
+			"",
+			"\1\27\40\uffff\32\26",
+			"\1\27\40\uffff\22\26\1\u0086\7\26",
+			"",
+			"\1\27\40\uffff\22\26\1\u0087\7\26",
 			"",
 			"\1\27\40\uffff\32\26",
 			"\1\27\40\uffff\32\26",
@@ -1360,34 +1418,34 @@ public class tal_sqlLexer extends Lexer {
 			""
 	};
 
-	static final short[] DFA14_eot = DFA.unpackEncodedString(DFA14_eotS);
-	static final short[] DFA14_eof = DFA.unpackEncodedString(DFA14_eofS);
-	static final char[] DFA14_min = DFA.unpackEncodedStringToUnsignedChars(DFA14_minS);
-	static final char[] DFA14_max = DFA.unpackEncodedStringToUnsignedChars(DFA14_maxS);
-	static final short[] DFA14_accept = DFA.unpackEncodedString(DFA14_acceptS);
-	static final short[] DFA14_special = DFA.unpackEncodedString(DFA14_specialS);
-	static final short[][] DFA14_transition;
+	static final short[] DFA16_eot = DFA.unpackEncodedString(DFA16_eotS);
+	static final short[] DFA16_eof = DFA.unpackEncodedString(DFA16_eofS);
+	static final char[] DFA16_min = DFA.unpackEncodedStringToUnsignedChars(DFA16_minS);
+	static final char[] DFA16_max = DFA.unpackEncodedStringToUnsignedChars(DFA16_maxS);
+	static final short[] DFA16_accept = DFA.unpackEncodedString(DFA16_acceptS);
+	static final short[] DFA16_special = DFA.unpackEncodedString(DFA16_specialS);
+	static final short[][] DFA16_transition;
 
 	static {
-		int numStates = DFA14_transitionS.length;
-		DFA14_transition = new short[numStates][];
+		int numStates = DFA16_transitionS.length;
+		DFA16_transition = new short[numStates][];
 		for (int i=0; i<numStates; i++) {
-			DFA14_transition[i] = DFA.unpackEncodedString(DFA14_transitionS[i]);
+			DFA16_transition[i] = DFA.unpackEncodedString(DFA16_transitionS[i]);
 		}
 	}
 
-	protected class DFA14 extends DFA {
+	protected class DFA16 extends DFA {
 
-		public DFA14(BaseRecognizer recognizer) {
+		public DFA16(BaseRecognizer recognizer) {
 			this.recognizer = recognizer;
-			this.decisionNumber = 14;
-			this.eot = DFA14_eot;
-			this.eof = DFA14_eof;
-			this.min = DFA14_min;
-			this.max = DFA14_max;
-			this.accept = DFA14_accept;
-			this.special = DFA14_special;
-			this.transition = DFA14_transition;
+			this.decisionNumber = 16;
+			this.eot = DFA16_eot;
+			this.eof = DFA16_eof;
+			this.min = DFA16_min;
+			this.max = DFA16_max;
+			this.accept = DFA16_accept;
+			this.special = DFA16_special;
+			this.transition = DFA16_transition;
 		}
 		@Override
 		public String getDescription() {
