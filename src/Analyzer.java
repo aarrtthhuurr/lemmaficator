@@ -1,5 +1,5 @@
-import grammar.tal_sqlLexer;
-import grammar.tal_sqlParser;
+import grammar.fichierLexer;
+import grammar.fichierParser;
 import org.antlr.runtime.ANTLRReaderStream;
 import org.antlr.runtime.CommonTokenStream;
 import org.antlr.runtime.RecognitionException;
@@ -154,9 +154,9 @@ public class Analyzer {
 
     private static String toPreSQL(String substituedRequest) throws IOException {
         try {
-            tal_sqlLexer talSqlLexer = new tal_sqlLexer(new ANTLRReaderStream(new StringReader(substituedRequest)));
+            fichierLexer talSqlLexer = new fichierLexer(new ANTLRReaderStream(new StringReader(substituedRequest)));
             CommonTokenStream commonTokenStream = new CommonTokenStream(talSqlLexer);
-            tal_sqlParser talSqlParser = new tal_sqlParser(commonTokenStream);
+            fichierParser talSqlParser = new fichierParser(commonTokenStream);
             return talSqlParser.listerequetes();
         } catch (RecognitionException e) {
             throw new IOException(e);
