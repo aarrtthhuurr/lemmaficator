@@ -1,6 +1,4 @@
-// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-08 11:27:21
-
-package grammar;
+// $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-08 17:07:05
 
 import org.antlr.runtime.*;
 import java.util.Stack;
@@ -1012,7 +1010,7 @@ public class fichierParser extends Parser {
 
 					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1143); 
 
-							nombre_arbre.ajouteFils(new Arbre(""," from public.numero where numero = '"+b.getText() +"'"));
+							nombre_arbre.ajouteFils(new Arbre(""," from public.numero where public.numero.numero = '"+b.getText() +"'"));
 						
 					}
 					break;
@@ -1022,7 +1020,7 @@ public class fichierParser extends Parser {
 					match(input,FICHIER,FOLLOW_FICHIER_in_nombre1152); 
 					b=(Token)match(input,NOMBRE,FOLLOW_NOMBRE_in_nombre1159); 
 
-							nombre_arbre.ajouteFils(new Arbre(""," from public.numero where fichier = '"+b.getText()+".htm' "));
+							nombre_arbre.ajouteFils(new Arbre(""," from public.numero where public.numero.fichier = '"+b.getText()+".htm' "));
 						
 					}
 					break;
