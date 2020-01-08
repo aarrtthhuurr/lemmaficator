@@ -1,6 +1,8 @@
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 class SQLManager {
 
@@ -20,7 +22,7 @@ class SQLManager {
         }
     }
 
-    List<String> request(String request) {
+    List<String> request(String request, boolean duplicateColumns) {
         List<String> rows = new ArrayList<>();
 
         try {
@@ -32,7 +34,13 @@ class SQLManager {
                 for (int i = 1; i <= resultSet.getMetaData().getColumnCount(); i++) {
                     row.append(resultSet.getObject(i).toString().trim()).append("\t");
                 }
-                rows.add(row.toString().substring(0, row.toString().length() - 1));
+
+                String rowString = row.toString().substring(0, row.toString().length() - 1);
+                if (duplicateColumns) {
+                    rows.add(rowString);
+                } else {
+                    rows.add(Arrays.stream(rowString.split("\t")).distinct().collect(Collectors.joining("\t")));
+                }
             }
 
             return rows;
