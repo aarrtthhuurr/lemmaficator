@@ -42,7 +42,7 @@ public class Analyzer {
                 .map(token -> ((String) token).trim()
                         .toLowerCase()
                         .replaceAll(".*'(.*)", "$1")) // Keep only after "'"
-                .filter(token -> !token.matches("[^a-zA-Z\\d-_]"))
+                .filter(token -> !token.matches("[^a-zA-Z\\d-_@]"))
                 .collect(Collectors.toList());
 
         List<String> tokensAfterStopList = filterList.removeFrom(tokensAfterSmallCorrections);
@@ -75,7 +75,7 @@ public class Analyzer {
                     .replaceAll("\\{(.*)\\}", "($1)");
             sqlRequest = toSQL(cleanedSQLRequest);
 
-            response = new Response(sqlManager.request(sqlRequest));
+            response = new Response(sqlManager.request(sqlRequest, false));
             response.addMetadata("unformattedSQLRequest", unformattedSQLRequest);
             response.addMetadata("cleanedSQLRequest", cleanedSQLRequest);
             response.addMetadata("finalSQLRequest", sqlRequest);
@@ -143,7 +143,7 @@ public class Analyzer {
                 .map(token -> token.toLowerCase().trim())
                 .filter(token -> token.length() >= MINIMUM_TOKEN_LENGTH || token.matches("\\d+"))
                 .map(token -> {
-                    if ((token.matches("\\d+")))
+                    if ((token.matches("\\d+") || token.matches(".*@.*")))
                         return new Lemma(token, token);
 
                     return lemmafy(lemmasLexicon, token, choseInConsole);
@@ -181,7 +181,7 @@ public class Analyzer {
 
         boolean firstWhere = true;
         while (where.find()) {
-            sqlRequestBuilder.append(firstWhere ? " WHERE " : " OR ").append(where.group(1).trim());
+            sqlRequestBuilder.append(firstWhere ? " WHERE " : " AND ").append(where.group(1).trim());
             firstWhere = false;
         }
 
