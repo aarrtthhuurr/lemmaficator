@@ -72,7 +72,8 @@ public class Analyzer {
             cleanedSQLRequest = unformattedSQLRequest
                     .replaceAll("[()]", "")
                     .replaceAll("\\s+", " ")
-                    .replaceAll("\\{(.*)\\}", "($1)");
+                    .replaceAll("\\{", "(")
+                    .replaceAll("}", ")");
             sqlRequest = toSQL(cleanedSQLRequest);
 
             response = new Response(sqlManager.request(sqlRequest, false));
@@ -175,8 +176,10 @@ public class Analyzer {
 
         boolean firstFrom = true;
         while (from.find()) {
-            sqlRequestBuilder.append(firstFrom ? " FROM " : ", ").append(from.group(1).trim());
-            firstFrom = false;
+            if (!sqlRequestBuilder.toString().contains(from.group(1).trim())) {
+                sqlRequestBuilder.append(firstFrom ? " FROM " : ", ").append(from.group(1).trim());
+                firstFrom = false;
+            }
         }
 
         boolean firstWhere = true;

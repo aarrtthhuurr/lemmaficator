@@ -12,6 +12,7 @@ class LemmasLexicon extends Lexicon {
     // Ignored tokens will be returned as if they were a Lemma
     LemmasLexicon(String filePath, Map<String, String> ignored) {
         super(filePath);
+        this.getMap().putAll(ignored);
         this.ignored = ignored;
     }
 

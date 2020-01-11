@@ -1,5 +1,7 @@
 // $ANTLR 3.5.1 /home/ulysse31/boulot/GI05/LO17/TD01/td04/src/fichier.g 2020-01-08 17:07:05
 
+package grammar;
+
 import org.antlr.runtime.*;
 import java.util.Stack;
 import java.util.List;
